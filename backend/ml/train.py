@@ -21,25 +21,24 @@ def train_and_save_model():
     print("VITALIS V4.3 Evaluation Pipeline (Independent Test Cohort & Benchmarking)")
     print("==================================================")
     
-    # 1. Synthesize Independent Training Cohort (N=50,000, seed=42)
-    print("[1/6] Synthesizing Independent Training Cohort (N=50,000, seed=42)...")
+    # 1. Synthesize Independent Training Cohort (N=6,000, seed=42)
+    print("[1/6] Synthesizing Independent Training Cohort (N=6,000, seed=42)...")
     X_train, y_train, feature_names, condition_keys = generate_cohort(
-        n_samples=50000, random_seed=42, key_sym_prob=0.88, noise_prob=0.15
+        n_samples=6000, random_seed=42, key_sym_prob=0.88, noise_prob=0.15
     )
     
-    # 2. Synthesize Independent, Distribution-Shifted Test Cohort (N=15,000, seed=999)
-    print("[2/6] Synthesizing Independent Distribution-Shifted Test Cohort (N=15,000, seed=999, key_prob=0.80, noise_prob=0.22)...")
+    # 2. Synthesize Independent, Distribution-Shifted Test Cohort (N=2,000, seed=999)
+    print("[2/6] Synthesizing Independent Distribution-Shifted Test Cohort (N=2,000, seed=999, key_prob=0.80, noise_prob=0.22)...")
     X_test, y_test, _, _ = generate_cohort(
-        n_samples=15000, random_seed=999, key_sym_prob=0.80, noise_prob=0.22
+        n_samples=2000, random_seed=999, key_sym_prob=0.80, noise_prob=0.22
     )
     print(f"      Cohorts Initialized: Train={X_train.shape[0]} samples, Independent Test={X_test.shape[0]} samples across {len(condition_keys)} classes.")
     
     # 3. Multi-Model Benchmark Comparison
-    print("[3/6] Running Multi-Model Benchmark Comparison (Logistic Regression, Random Forest, HistGradientBoosting)...")
+    print("[3/6] Running Multi-Model Benchmark Comparison (Logistic Regression, Random Forest)...")
     models = {
-        "LogisticRegression": LogisticRegression(max_iter=500, random_state=42),
-        "RandomForest": RandomForestClassifier(n_estimators=300, max_depth=10, min_samples_split=4, random_state=42, n_jobs=-1),
-        "HistGradientBoosting": HistGradientBoostingClassifier(max_iter=150, max_depth=8, random_state=42)
+        "LogisticRegression": LogisticRegression(max_iter=300, random_state=42),
+        "RandomForest": RandomForestClassifier(n_estimators=50, max_depth=8, min_samples_split=4, random_state=42, n_jobs=1),
     }
     
     benchmark_results = {}
@@ -65,7 +64,7 @@ def train_and_save_model():
     # 4. Calibrate Best Model (Random Forest Ensemble)
     print("[4/6] Calibrating primary Random Forest ensemble via CalibratedClassifierCV (Platt Sigmoid)...")
     rf_best = models["RandomForest"]
-    calibrated_model = CalibratedClassifierCV(rf_best, method='sigmoid', cv=3)
+    calibrated_model = CalibratedClassifierCV(rf_best, method='sigmoid', cv=2)
     calibrated_model.fit(X_train, y_train)
     
     # Evaluate calibrated model on independent test set
