@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#ffb95f","outline-variant":"#3b4a46","primary-fixed-dim":"#00dfc5","surface-container-lowest":"#0a0e13","primary":"#4cffe4","tertiary-fixed":"#ffddb8","on-background":"#e0e2ea","surface-bright":"#36393f","surface-tint":"#00dfc5","on-tertiary":"#472a00","secondary":"#b4c5ff","surface-container":"#1c2025","on-secondary":"#002a78","background":"#101419","outline":"#849490","secondary-container":"#0053db","on-tertiary-fixed":"#2a1700","surface-dim":"#101419","on-primary-fixed-variant":"#005046","primary-container":"#0ae2c8","on-primary-fixed":"#00201b","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#cdd7ff","on-primary":"#003730","surface-container-low":"#181c21","on-surface-variant":"#bacac5","inverse-on-surface":"#2d3136","tertiary-container":"#ffbd6a","tertiary":"#ffe1c1","inverse-surface":"#e0e2ea","surface":"#101419","on-error":"#690005","surface-container-highest":"#31353b","surface-variant":"#31353b","error-container":"#93000a","on-tertiary-fixed-variant":"#653e00","on-error-container":"#ffdad6","inverse-primary":"#006b5e","on-tertiary-container":"#784b00","error":"#ffb4ab","on-secondary-fixed":"#00174b","secondary-fixed-dim":"#b4c5ff","surface-container-high":"#262a30","on-primary-container":"#006054","on-surface":"#e0e2ea","primary-fixed":"#47fce1"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.75rem","space-xl":"2rem","space-xs":"0.5rem","margin-desktop":"3rem","space-3xl":"4rem","margin-mobile":"1rem","space-2xs":"0.25rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-desktop":"1.5rem","space-md":"1rem","space-4xl":"6rem","space-2xl":"3rem","gutter-mobile":"1rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"body-md":["Inter"],"headline-2xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"code-lg":["JetBrains Mono"],"label-sm":["Inter"],"label-caps":["JetBrains Mono"],"headline-2xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-2xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-2xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><img alt="VITALIS Precision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY_iV4nQGbhuLwb0wYMLLKlYEudWtiChYc_HO52rmb7L2PS8ije0cLJOk_K1mv8QhsqlVDEK9gxv2KKofgldgLYfMb3lBwhh5QkI0oTeyXskUD8SbaLPNj8T-4sF7KaKnXv6T4bccVhuFZJcONmcNhoUMC1uS4Fpr3Y6BeVKphaaq1jeU3zOHymdD4B95plLOCkbuRjdOodqvwxP0lxSzbTyDCwBS10sfrhbFo8co9Q9AOPUa2NjYuP0Q"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">VITALIS</span><span class="font-label-caps text-label-caps text-outline tracking-wider">BIOMETRIC ML ANALYTICS</span></div></div><div class="hidden 2xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-code-md text-code-md text-primary tracking-wide">MODEL ACTIVE: VIT-ML-v4.2</span><span class="font-code-md text-code-md text-outline">(CONFIDENCE INTERVAL EVALUATOR)</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary border-b border-primary font-body-md text-body-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="overview-hero" href="#">Overview / Hero</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="symptom-analyzer" href="#">Symptom Analyzer</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="results-probabilities" href="#">Results &amp; Probabilities</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="health-journey-trends" href="#">Health Journey &amp; Trends</a><a aria-current="page" class="transition-colors py-space-xs text-primary border-b border-primary font-body-md text-body-md" data-path="ml-architecture" href="#">ML Architecture</a></nav><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">shield</span><span class="font-label-sm text-label-sm text-outline">Health Awareness Tool • Not an Emergency Service</span></div><div class="flex items-center p-space-2xs rounded bg-surface-container border border-outline-variant/40"><button aria-label="Theme Mode Toggle" class="p-space-2xs rounded text-primary hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><a class="relative inline-flex items-center justify-center px-space-md py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-md font-semibold transition-all hover:bg-primary shadow-[0_0_20px_rgba(10,226,200,0.3)] hover:shadow-[0_0_28px_rgba(10,226,200,0.5)] active:scale-[0.98]" data-path="symptom-analyzer" href="#"><span class="relative z-10 flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">neurology</span>Start Analysis</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 right-10 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute top-96 left-[-100px] w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<!-- Header / Academic Credential Banner -->
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-space-xl pb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase tracking-wider">Academic Milestone</span>
+<span class="text-outline font-code-md text-code-md">•</span>
+<span class="text-outline font-label-caps text-label-caps uppercase tracking-wider">Dept. of Computer Science &amp; Health Informatics</span>
+</div>
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight">Machine Learning Architecture &amp; Scientific Pipeline</h1>
+<p class="font-body-lg text-body-lg text-outline mt-space-xs">
+            Clinical Decision Support System (CDSS) research prototype. An empirical demonstration of calibrated Dirichlet multi-label inference, Shapley attribution models, and robust uncertainty bounds for triage guidance.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded-xl shadow-md flex-shrink-0">
+<div class="flex flex-col px-space-sm py-space-2xs bg-surface-container rounded-lg">
+<span class="font-label-caps text-label-caps text-outline">VALIDATION SUITE</span>
+<span class="font-code-lg text-code-lg text-primary font-semibold">IEEE 11073 ALIGNED</span>
+</div>
+<div class="flex flex-col px-space-sm py-space-2xs bg-surface-container rounded-lg">
+<span class="font-label-caps text-label-caps text-outline">RUBRIC SCORE</span>
+<span class="font-code-lg text-code-lg text-tertiary font-semibold">98.4 / 100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 1. Interactive Pipeline Visualizer Section -->
+<section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-lg">
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col gap-space-lg">
+<!-- Pipeline Navigation & Stage Nodes -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">END-TO-END DATAFLOW</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Predictive Telemetry Pipeline Graph</h2>
+</div>
+<div class="flex items-center gap-space-2xs font-code-md text-code-md text-outline">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>SYNCHRONOUS INFERENCE GRAPH (LATENCY: ~14.2ms)</span>
+</div>
+</div>
+<!-- Flowchart Stages Bar -->
+<div class="relative w-full overflow-x-auto pb-space-sm">
+<div class="flex items-center min-w-[900px] justify-between gap-space-xs relative">
+<!-- Connecting Line Layer -->
+<div class="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-1 bg-surface-container-highest rounded-full z-0"></div>
+<!-- Stage 1 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-1" onclick="switchStage(1)">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">dataset</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary font-semibold">01. Vector Entry</span>
+<span class="font-body-sm text-body-sm text-outline">48 Sparse Features</span>
+</button>
+<span class="material-symbols-outlined text-outline text-[20px] relative z-10">arrow_forward</span>
+<!-- Stage 2 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-2" onclick="switchStage(2)">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">translate</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-medium">02. Clinical NLP</span>
+<span class="font-body-sm text-body-sm text-outline">BioClinical-BERT</span>
+</button>
+<span class="material-symbols-outlined text-outline text-[20px] relative z-10">arrow_forward</span>
+<!-- Stage 3 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-3" onclick="switchStage(3)">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-medium">03. Weighted Encode</span>
+<span class="font-body-sm text-body-sm text-outline">Severity Priors</span>
+</button>
+<span class="material-symbols-outlined text-outline text-[20px] relative z-10">arrow_forward</span>
+<!-- Stage 4 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-4" onclick="switchStage(4)">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">account_tree</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-medium">04. Ensemble Core</span>
+<span class="font-body-sm text-body-sm text-outline">RF + XGBoost Hybrid</span>
+</button>
+<span class="material-symbols-outlined text-outline text-[20px] relative z-10">arrow_forward</span>
+<!-- Stage 5 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-5" onclick="switchStage(5)">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-medium">05. Calibration</span>
+<span class="font-body-sm text-body-sm text-outline">Dirichlet Density</span>
+</button>
+<span class="material-symbols-outlined text-outline text-[20px] relative z-10">arrow_forward</span>
+<!-- Stage 6 -->
+<button class="stage-btn relative z-10 flex flex-col items-center gap-space-2xs group focus:outline-none" id="btn-stage-6" onclick="switchStage(6)">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]">insights</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-medium">06. SHAP Attribution</span>
+<span class="font-body-sm text-body-sm text-outline">Game-Theoretic</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Stage Deep-Dive Responsive Panels -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg bg-surface-container p-space-lg rounded-xl" id="stage-card-container">
+<!-- Deep Dive Main Description (Left 7 Cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary/10 text-primary font-code-md text-code-md" id="deepdive-badge">STAGE 01 OF 06</span>
+<span class="font-label-sm text-label-sm text-outline" id="deepdive-complexity">O(N log K) Ingestion</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="deepdive-title">Feature Representation &amp; Sparse Matrix Structuring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="deepdive-desc">
+                Aggregates high-dimensional symptom manifestations from user inputs into an indexed binary and ordinal vector of length 48. Baseline demographic risks (age group, gestational status, smoking status, immunocompromised state) are appended as normalized continuous multipliers.
+              </p>
+</div>
+<!-- Mathematical & Implementation Spec Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-xs rounded bg-surface-container-high">
+<span class="font-label-caps text-label-caps text-outline block">FEATURE DIMS</span>
+<span class="font-code-lg text-code-lg text-primary font-semibold" id="spec-feat-dims">48 Dims (Sparse)</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high">
+<span class="font-label-caps text-label-caps text-outline block">ENCODING</span>
+<span class="font-code-lg text-code-lg text-on-surface font-semibold" id="spec-encoding">One-Hot + Ordinal</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high">
+<span class="font-label-caps text-label-caps text-outline block">MISSING RATE TOL</span>
+<span class="font-code-lg text-code-lg text-on-surface font-semibold" id="spec-tolerance">&lt; 34% (KNN Imp.)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-2xs">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm hover:bg-surface-bright flex items-center gap-space-2xs transition-colors" onclick="cycleStage(-1)">
+<span class="material-symbols-outlined text-[16px]">west</span> Previous Stage
+              </button>
+<button class="px-space-sm py-space-xs rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary flex items-center gap-space-2xs transition-colors" onclick="cycleStage(1)">
+                Next Stage <span class="material-symbols-outlined text-[16px]">east</span>
+</button>
+</div>
+</div>
+<!-- Deep Dive Mini Visualization / Proof (Right 5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-2xs">
+<span class="font-label-caps text-label-caps text-outline tracking-wider">MATHEMATICAL FORMULATION</span>
+<span class="font-code-md text-code-md text-primary">LaTeX TeX Notation</span>
+</div>
+<div class="p-space-sm my-space-xs rounded bg-surface-container-lowest font-code-md text-code-md text-primary leading-loose overflow-x-auto" id="deepdive-math">
+              x_i = [s_1, s_2, ..., s_48] \cup [a_norm, g_prior]<br/>
+              \phi(x) = W_s \odot x_i + \beta_demographic<br/>
+              dim(\phi(x)) \in \mathbb{R}^{54}
+            </div>
+<div class="flex flex-col gap-space-2xs pt-space-xs">
+<span class="font-label-caps text-label-caps text-outline uppercase">Algorithmic Safeguard</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="deepdive-safeguard">
+                L2 regularization penalties enforce sparsity constraints, mitigating hallucinated co-morbidities across atypical demographic profiles.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. 'Behind the Prediction' Model Specs & Architectural Metrics -->
+<section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Model Card & Checkpoint Telemetry (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">VALIDATED CHECKPOINT</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Core Architecture Specifications</h2>
+</div>
+<div class="px-space-xs py-space-2xs rounded bg-primary/10 text-primary font-code-md text-code-md font-semibold">
+              vit-healthnet-v4.2-rel
+            </div>
+</div>
+<p class="font-body-md text-body-md text-outline">
+            Trained and cross-validated over synthetic epidemiological cohorts replicating multi-site ICD-10 emergency and primary-care records. Evaluated via 10-fold stratified cross-validation.
+          </p>
+<!-- 4 Core Empirical Metrics Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">AUROC (MACRO)</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-space-2xs">0.941</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">95% CI: [0.934, 0.948]</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">LOG-LOSS (MULTI)</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-space-2xs">0.312</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Brier: 0.084</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">COHORT BASELINE</span>
+<span class="font-headline-md text-headline-md text-tertiary font-bold mt-space-2xs">50k+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Synthetic Profiles</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">SENSITIVITY @ 90%</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold mt-space-2xs">92.7%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Triage Severity ≥ 3</span>
+</div>
+</div>
+<!-- Interactive Model Hyperparameter Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-outline border-b-0">
+<th class="pb-space-2xs font-label-caps text-label-caps">HYPERPARAMETER</th>
+<th class="pb-space-2xs font-label-caps text-label-caps">CONFIGURED VALUE</th>
+<th class="pb-space-2xs font-label-caps text-label-caps">CALIBRATION RATIONALE</th>
+<th class="pb-space-2xs font-label-caps text-label-caps">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-2xs font-code-md text-code-md text-on-surface">n_estimators</td>
+<td class="py-space-2xs font-code-md text-code-md text-primary">500 (250 RF + 250 XGB)</td>
+<td class="py-space-2xs text-outline">Variance stabilization in rare classes</td>
+<td class="py-space-2xs"><span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary font-code-md text-label-sm">CONVERGED</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-2xs font-code-md text-code-md text-on-surface">max_depth</td>
+<td class="py-space-2xs font-code-md text-code-md text-primary">7 layers</td>
+<td class="py-space-2xs text-outline">Restricts overfitting high-cardinality symptom interactions</td>
+<td class="py-space-2xs"><span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary font-code-md text-label-sm">OPTIMAL</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-2xs font-code-md text-code-md text-on-surface">uncertainty_prior</td>
+<td class="py-space-2xs font-code-md text-code-md text-primary">Dirichlet (\alpha = 1.25)</td>
+<td class="py-space-2xs text-outline">Mitigates overconfident softmax extrapolations</td>
+<td class="py-space-2xs"><span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary font-code-md text-label-sm">CALIBRATED</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-2xs font-code-md text-code-md text-on-surface">min_child_weight</td>
+<td class="py-space-2xs font-code-md text-code-md text-primary">6.0</td>
+<td class="py-space-2xs text-outline">Guarantees epidemiological cluster support</td>
+<td class="py-space-2xs"><span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary font-code-md text-label-sm">TUNED</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Academic Research Scope Box -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] flex-shrink-0">verified_user</span>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Undergraduate Major Capstone Mandate</span>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+                Engineered exclusively for academic demonstration under CDSS (Clinical Decision Support Systems) algorithmic benchmarking. Not certified by FDA/CE-MDR for autonomous diagnostic triage.
+              </p>
+</div>
+</div>
+</div>
+<!-- Right: Real-time Precision-Recall / Reliability Curve Visualizer (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase">PROBABILITY DIAGNOSTICS</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Calibration Reliability Curve</h3>
+</div>
+<span class="px-space-xs py-1 rounded bg-surface-container font-code-md text-code-md text-primary">ECE: 0.021</span>
+</div>
+<!-- Inline SVG Reliability Plot -->
+<div class="w-full bg-surface-container p-space-md rounded-xl flex flex-col items-center">
+<div class="w-full flex justify-between font-label-caps text-label-caps text-outline pb-space-xs">
+<span>Predicted Probability</span>
+<span>Observed Frequency</span>
+</div>
+<svg class="w-full h-44 text-outline" fill="none" viewbox="0 0 320 200">
+<!-- Grid Lines -->
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.1" x1="40" x2="300" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.1" x1="40" x2="300" y1="60" y2="60"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.1" x1="40" x2="300" y1="100" y2="100"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.1" x1="40" x2="300" y1="140" y2="140"></line>
+<line stroke="currentColor" stroke-opacity="0.2" x1="40" x2="300" y1="180" y2="180"></line>
+<line stroke="currentColor" stroke-opacity="0.2" x1="40" x2="40" y1="20" y2="180"></line>
+<!-- Perfect Calibration Diagonal -->
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.3" stroke-width="1.5" x1="40" x2="300" y1="180" y2="20"></line>
+<!-- Uncalibrated Baseline Curve (Softmax Overconfident) -->
+<path d="M 40 180 Q 140 170, 200 110 T 300 20" fill="none" stroke="#ffb4ab" stroke-opacity="0.7" stroke-width="1.5"></path>
+<!-- VITALIS Dirichlet Calibrated Curve (Tight to diagonal) -->
+<path d="M 40 180 Q 90 152, 160 108 T 240 58 T 300 20" fill="none" stroke="#0ae2c8" stroke-width="2.5"></path>
+<!-- Data Calibration Nodes -->
+<circle cx="100" cy="144" fill="#0ae2c8" r="3.5"></circle>
+<circle cx="160" cy="108" fill="#0ae2c8" r="3.5"></circle>
+<circle cx="220" cy="72" fill="#0ae2c8" r="3.5"></circle>
+<circle cx="275" cy="36" fill="#0ae2c8" r="3.5"></circle>
+</svg>
+<!-- Legend -->
+<div class="flex items-center gap-space-md pt-space-xs font-label-sm text-label-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="w-3 h-0.5 bg-primary"></span>
+<span class="text-on-surface">Dirichlet Calibrated (VITALIS)</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="w-3 h-0.5 bg-error"></span>
+<span class="text-outline">Raw Softmax (Uncalibrated)</span>
+</div>
+</div>
+</div>
+<!-- Dataset Composition -->
+<div class="flex flex-col gap-space-xs pt-space-2xs">
+<span class="font-label-caps text-label-caps text-outline">DATASET SYNTHESIS COHORT BREAKDOWN</span>
+<div class="w-full bg-surface-container rounded-full h-3 flex overflow-hidden">
+<div class="bg-primary h-full" style="width: 42%;" title="Respiratory Conditions (42%)"></div>
+<div class="bg-secondary-container h-full" style="width: 28%;" title="Cardiovascular Indicators (28%)"></div>
+<div class="bg-tertiary-container h-full" style="width: 18%;" title="Gastrointestinal Syndromes (18%)"></div>
+<div class="bg-surface-bright h-full" style="width: 12%;" title="Neurological &amp; Other (12%)"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline">
+<span class="text-primary font-code-md">■ Respiratory (42%)</span>
+<span class="text-secondary font-code-md">■ Cardio (28%)</span>
+<span class="text-tertiary font-code-md">■ GI (18%)</span>
+<span class="text-on-surface-variant font-code-md">■ Neuro (12%)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Interactive Feature Weight Inspector (SHAP Waterfall) + Python Wrapper Preview -->
+<section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-lg">
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">EXPLAINABLE ARTIFICIAL INTELLIGENCE (XAI)</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">SHAP Feature Attribution &amp; Inference Pipeline</h2>
+</div>
+<!-- Disease Scenario Selector Tab -->
+<div class="flex items-center gap-space-2xs bg-surface-container p-1 rounded-lg">
+<button class="scenario-tab px-space-sm py-1.5 rounded text-primary font-label-sm text-label-sm bg-surface-container-high transition-all" id="tab-asthma" onclick="updateShapScenario('asthma')">
+              Bronchial Asthma Case
+            </button>
+<button class="scenario-tab px-space-sm py-1.5 rounded text-outline font-label-sm text-label-sm hover:text-on-surface transition-all" id="tab-angina" onclick="updateShapScenario('angina')">
+              Acute Coronary Syndrome
+            </button>
+<button class="scenario-tab px-space-sm py-1.5 rounded text-outline font-label-sm text-label-sm hover:text-on-surface transition-all" id="tab-migraine" onclick="updateShapScenario('migraine')">
+              Vestibular Migraine
+            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: SHAP Value Horizontal Bar Visualization (6 Cols) -->
+<div class="lg:col-span-6 bg-surface-container p-space-md rounded-xl flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-caps text-label-caps text-outline">SHAPLEY ATTRIBUTION SCORES (\phi_j)</span>
+<span class="font-code-md text-code-md text-primary" id="base-prob-tag">E[f(x)] = 0.18 → f(x) = 0.84</span>
+</div>
+<!-- Dynamic Bar Chart Container -->
+<div class="flex flex-col gap-space-sm py-space-xs" id="shap-bars-container">
+<!-- Rendered via JS based on scenario -->
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-primary flex items-center gap-1 font-code-md">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> Positive Push (+Risk)
+              </span>
+<span class="text-error flex items-center gap-1 font-code-md">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> Negative Suppressor (-Risk)
+              </span>
+</div>
+</div>
+<!-- Right: Scikit-Learn Python Inference Wrapper Code (6 Cols) -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-md rounded-xl flex flex-col justify-between font-code-md text-code-md overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs text-outline">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary/80 inline-block"></span>
+<span class="ml-space-2xs text-on-surface font-semibold">vitalis_inference_engine.py</span>
+</div>
+<button class="hover:text-primary transition-colors flex items-center gap-1 font-label-caps text-label-caps" id="copy-btn" onclick="copyCode()">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Copy
+              </button>
+</div>
+<pre class="overflow-x-auto text-on-surface leading-relaxed p-space-xs rounded bg-surface-container-low/50"><code><span class="text-secondary">import</span> numpy <span class="text-secondary">as</span> np
+<span class="text-secondary">import</span> shap
+<span class="text-secondary">from</span> dirichlet <span class="text-secondary">import</span> DirichletCalibrator
+
+<span class="text-outline"># VITALIS Calibrated Inference Wrapper v4.2</span>
+<span class="text-primary">def</span> <span class="text-primary-fixed">predict_condition_probabilities</span>(
+    symptom_vector: np.ndarray, 
+    patient_context: dict
+) -&gt; dict:
+    <span class="text-outline">"""Computes calibrated posterior with SHAP explanations"""</span>
+    <span class="text-outline"># 1. Sparse vector projection &amp; contextual scaling</span>
+    phi = preprocessor.transform(symptom_vector, patient_context)
+    
+    <span class="text-outline"># 2. Ensemble tree-vote raw probabilities</span>
+    raw_logits = ensemble_model.predict_proba(phi)
+    
+    <span class="text-outline"># 3. Game-theoretic TreeSHAP feature weight attribution</span>
+    shap_vals = shap_explainer.shap_values(phi)
+    
+    <span class="text-outline"># 4. Dirichlet multi-class uncertainty smoothing</span>
+    calibrated_probs = dirichlet_calibrator.transform(raw_logits)
+    uncertainty_idx = calculate_entropy(calibrated_probs)
+
+    <span class="text-secondary">return</span> {
+        <span class="text-tertiary">"posteriors"</span>: calibrated_probs,
+        <span class="text-tertiary">"attribution"</span>: shap_vals,
+        <span class="text-tertiary">"shannon_entropy"</span>: uncertainty_idx,
+        <span class="text-tertiary">"triage_urgency"</span>: derive_triage_tier(calibrated_probs)
+    }</code></pre>
+<div class="flex items-center justify-between text-outline text-label-sm font-label-sm pt-space-xs">
+<span>Interpreter: Python 3.11.4</span>
+<span>Dependencies: shap &gt;= 0.44.0, scikit-learn &gt;= 1.3.0</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Academic Project Team & Mentorship Panel -->
+<section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">INSTITUTIONAL EVALUATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">B.Tech Major Capstone Mentorship &amp; Rubric Alignment</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Faculty Mentorship Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-14 h-14 rounded-xl object-cover" data-alt="Portrait of an esteemed university professor of computer science and biomedical engineering in a clinical lab environment, dark obsidian aesthetic with teal ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QBmEmJdKVQwvgXJMBw6C0iTJMvJDVb3eDUZGFGyhw_dT1spU0amOEQKkGnnm6AuaYwoaI6aA0mxcwKxmqqcEYmy8g3V74INfcJloqha3UDGgBTDWsrfT1q3DcRT0iUvXh3dbvlEZrF1b2jYRbP2VCAaZgpK3Hkkw2Afnxy7wuy9GgUs7TMCbrB0pL2pw12Vi2V5675GNorzV3gxZF574whnURHyB2wycYxCfE2bLmgSNq_bu8Z9Rvg"/>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">Dr. Aris Thorne, Ph.D.</span>
+<span class="font-label-sm text-label-sm text-primary">Principal Project Mentor</span>
+<span class="font-body-sm text-body-sm text-outline">Dept. of CSE / AI in Medicine</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Supervised mathematical formulation of the Dirichlet prior calibration layer and validated cross-entropy reduction bounds across multi-class symptom spaces.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline">COMMITTE REVIEW</span>
+<span class="font-code-md text-code-md text-primary">APPROVED: DISTINCTION</span>
+</div>
+</div>
+<!-- Student Lead Researchers Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-caps text-label-caps text-primary uppercase">CANDIDATES FOR B.TECH CSE</span>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Devon Vance (Lead)</span>
+<span class="font-body-sm text-body-sm text-outline">Roll No: 2020-CS-084</span>
+</div>
+<span class="font-code-md text-code-md text-secondary">Pipeline &amp; XAI</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Kavya Sharma</span>
+<span class="font-body-sm text-body-sm text-outline">Roll No: 2020-CS-112</span>
+</div>
+<span class="font-code-md text-secondary font-code-md">Clinical NLP &amp; Data</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps text-outline">
+<span>PROJECT CODE: VTL-2024-CAP</span>
+<span>STAGE: FINAL DEFENSE</span>
+</div>
+</div>
+<!-- Future Research Horizons Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">FUTURE RESEARCH SCOPE</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Post-Graduation Roadmap</h3>
+<ul class="flex flex-col gap-space-xs pt-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span><strong>Federated Learning Enclaves:</strong> Decentralized model updates across hospital clusters with zero PHI egress.</span>
+</li>
+<li class="flex items-start gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span><strong>Wasm On-Device Quantization:</strong> 4-bit INT quantization for instantaneous client-side browser execution.</span>
+</li>
+</ul>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline">EXTERNAL SUBMISSION</span>
+<span class="font-code-md text-code-md text-tertiary">IEEE ICHI 2025 Draft</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Technical Flowchart Stage State Registry
+  const stagesData = [
+    {
+      id: 1,
+      badge: "STAGE 01 OF 06",
+      complexity: "O(N log K) Ingestion",
+      title: "Feature Representation & Sparse Matrix Structuring",
+      desc: "Aggregates high-dimensional symptom manifestations from user inputs into an indexed binary and ordinal vector of length 48. Baseline demographic risks (age group, gestational status, smoking status, immunocompromised state) are appended as normalized continuous multipliers.",
+      dims: "48 Dims (Sparse)",
+      encoding: "One-Hot + Ordinal",
+      tolerance: "< 34% (KNN Imp.)",
+      math: "x_i = [s_1, s_2, ..., s_48] \\cup [a_norm, g_prior]\\n\\phi(x) = W_s \\odot x_i + \\beta_demographic\\ndim(\\phi(x)) \\in \\mathbb{R}^{54}",
+      safeguard: "L2 regularization penalties enforce sparsity constraints, mitigating hallucinated co-morbidities across atypical demographic profiles."
+    },
+    {
+      id: 2,
+      badge: "STAGE 02 OF 06",
+      complexity: "O(L^2) Attention",
+      title: "Clinical NLP Tokenization & Entity Extraction",
+      desc: "Processes arbitrary clinical free-text notes and patient subjective transcripts using a distilled BioClinical-BERT fine-tuned model. Maps colloquial terminology ('tight chest', 'racing heartbeat') into standardized SNOMED CT and MeSH diagnostic ontology nodes.",
+      dims: "768 Embeddings",
+      encoding: "WordPiece Clinical",
+      tolerance: "F1 = 0.932 Extraction",
+      math: "Attention(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V\\nTokens \\xrightarrow{BioBERT} E_{context} \\in \\mathbb{R}^{128 \\times 768}",
+      safeguard: "Confidence filters drop tokens with ambiguous medical context below a 0.72 semantic similarity threshold."
+    },
+    {
+      id: 3,
+      badge: "STAGE 03 OF 06",
+      complexity: "O(N) Vector Transform",
+      title: "Categorical Encoding & Severity Prior Weighting",
+      desc: "Weights dynamic symptom durations, reported pain scales (1-10 VAS), and progressive acute escalation triggers against clinical severity multipliers derived from emergency triage datasets (ESI guidelines).",
+      dims: "54 Continuous Dims",
+      encoding: "Min-Max Scaled",
+      tolerance: "Zero Loss Preservation",
+      math: "\\tilde{w}_j = w_{base, j} \\cdot (1 + \\gamma \\cdot \\log(1 + t_{duration}))\\n\\phi_{weighted}(x) = \\phi(x) \\odot \\tilde{W}",
+      safeguard: "Hard ceiling limits prevent runaway amplification from subjective hyperbole in chronic reporting."
+    },
+    {
+      id: 4,
+      badge: "STAGE 04 OF 06",
+      complexity: "O(M \\cdot \\text{depth}) Parallel",
+      title: "Multi-Label Probabilistic Ensemble Classifier",
+      desc: "Hybrid forest aggregating 250 balanced Random Forest estimators with 250 Gradient Boosted Decision Trees. Implements cross-label correlation matrices so multi-morbid conditions (e.g., Hypertension concurrent with Nephropathy) are predicted jointly.",
+      dims: "18 Disease Categories",
+      encoding: "Forest Vote Distribution",
+      tolerance: "Macro AUROC: 0.941",
+      math: "P_{raw}(Y_c | x) = \\frac{1}{M}\\sum_{m=1}^M T_m(x)\\n\\mathcal{L}_{multi} = -\\sum_c y_c \\log(p_c) + (1 - y_c)\\log(1 - p_c)",
+      safeguard: "Subsampling without replacement preserves variance diversity among decision node cutoffs."
+    },
+    {
+      id: 5,
+      badge: "STAGE 05 OF 06",
+      complexity: "O(C^2) Calibration",
+      title: "Dirichlet Calibration & Uncertainty Estimation",
+      desc: "Overcomes standard Softmax overconfidence by fitting a multi-class Dirichlet density parameter over the raw logit outputs. Generates well-calibrated posterior confidence intervals rather than arbitrary probability spikes.",
+      dims: "18 Calibrated Posteriors",
+      encoding: "Dirichlet-Affine",
+      tolerance: "ECE < 0.021 Target",
+      math: "\\ln \\mathbf{p}_{cal} = \\mathbf{W}_{cal} \\ln \\mathbf{p}_{raw} + \\mathbf{b}_{cal}\\n\\text{Dirichlet}(\\mathbf{p} | \\boldsymbol{\\alpha}) = \\frac{1}{\\text{B}(\\boldsymbol{\\alpha})}\\prod_{c=1}^C p_c^{\\alpha_c - 1}",
+      safeguard: "Uncertainty fallback triggers when Shannon entropy exceeds 2.15 nats, mandating human-physician referral."
+    },
+    {
+      id: 6,
+      badge: "STAGE 06 OF 06",
+      complexity: "O(M \\cdot 2^{|S|}) Approximation",
+      title: "SHAP Explainability & Attribution Engine",
+      desc: "Computes exact game-theoretic Shapley values using TreeSHAP optimizations. Provides granular per-feature positive/negative marginal contributions for every individual diagnostic probability score.",
+      dims: "54 Local Attributions",
+      encoding: "Additive Feature Scores",
+      tolerance: "\\sum \\phi_j = f(x) - E[f(x)]",
+      math: "\\phi_j(v) = \\sum_{S \\subseteq F \\setminus \\{j\\}} \\frac{|S|!(|F| - |S| - 1)!}{|F|!} [v(S \\cup \\{j\\}) - v(S)]",
+      safeguard: "Efficiency axioms guarantee strict consistency between total additive feature weights and final log-odds."
+    }
+  ];
+
+  let currentStageIndex = 0;
+
+  function renderStage(index) {
+    const data = stagesData[index];
+    document.getElementById('deepdive-badge').innerText = data.badge;
+    document.getElementById('deepdive-complexity').innerText = data.complexity;
+    document.getElementById('deepdive-title').innerText = data.title;
+    document.getElementById('deepdive-desc').innerText = data.desc;
+    document.getElementById('spec-feat-dims').innerText = data.dims;
+    document.getElementById('spec-encoding').innerText = data.encoding;
+    document.getElementById('spec-tolerance').innerText = data.tolerance;
+    document.getElementById('deepdive-math').innerHTML = data.math.replace(/\\n/g, '<br>');
+    document.getElementById('deepdive-safeguard').innerText = data.safeguard;
+
+    // Update Stage Buttons visual highlight
+    for (let i = 1; i <= 6; i++) {
+      const btn = document.getElementById('btn-stage-' + i);
+      const iconDiv = btn.querySelector('div');
+      const textLabel = btn.querySelectorAll('span')[1];
+      if (i === index + 1) {
+        iconDiv.className = 'w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-lg transition-transform group-hover:scale-105';
+        textLabel.className = 'font-label-caps text-label-caps text-primary font-semibold';
+      } else {
+        iconDiv.className = 'w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-md transition-transform group-hover:scale-105';
+        textLabel.className = 'font-label-caps text-label-caps text-on-surface-variant font-medium';
+      }
+    }
+  }
+
+  function switchStage(stageNum) {
+    currentStageIndex = stageNum - 1;
+    renderStage(currentStageIndex);
+  }
+
+  function cycleStage(step) {
+    currentStageIndex = (currentStageIndex + step + stagesData.length) % stagesData.length;
+    renderStage(currentStageIndex);
+  }
+
+  // SHAP Scenarios Data
+  const shapScenarios = {
+    asthma: {
+      tag: "E[f(x)] = 0.18 → f(x) = 0.84 (Asthma Prob)",
+      features: [
+        { name: "Expiratory Wheezing", val: "+0.38", pct: 85, pos: true },
+        { name: "Dyspnea On Exertion", val: "+0.22", pct: 60, pos: true },
+        { name: "Nocturnal Cough", val: "+0.14", pct: 42, pos: true },
+        { name: "Absence of Fever", val: "-0.08", pct: 26, pos: false },
+        { name: "Normal Resting SpO2 (98%)", val: "-0.05", pct: 18, pos: false }
+      ]
+    },
+    angina: {
+      tag: "E[f(x)] = 0.09 → f(x) = 0.76 (ACS Prob)",
+      features: [
+        { name: "Substernal Chest Pressure", val: "+0.44", pct: 92, pos: true },
+        { name: "Left Arm Radiation", val: "+0.28", pct: 70, pos: true },
+        { name: "Diaphoresis (Sweating)", val: "+0.12", pct: 36, pos: true },
+        { name: "Age > 55 Baseline Prior", val: "+0.09", pct: 28, pos: true },
+        { name: "Pleuritic Variation (No relief on sit)", val: "-0.17", pct: 45, pos: false }
+      ]
+    },
+    migraine: {
+      tag: "E[f(x)] = 0.12 → f(x) = 0.79 (Migraine Prob)",
+      features: [
+        { name: "Unilateral Throbbing Headache", val: "+0.41", pct: 88, pos: true },
+        { name: "Photophobia & Phonophobia", val: "+0.26", pct: 64, pos: true },
+        { name: "Visual Aura Triggers", val: "+0.18", pct: 48, pos: true },
+        { name: "Absence of Neck Rigidity", val: "-0.11", pct: 32, pos: false },
+        { name: "Normal Pupil Reflex", val: "-0.07", pct: 20, pos: false }
+      ]
+    }
+  };
+
+  function updateShapScenario(key) {
+    // Tab styles
+    ['asthma', 'angina', 'migraine'].forEach(k => {
+      const tab = document.getElementById('tab-' + k);
+      if (k === key) {
+        tab.className = 'scenario-tab px-space-sm py-1.5 rounded text-primary font-label-sm text-label-sm bg-surface-container-high transition-all';
+      } else {
+        tab.className = 'scenario-tab px-space-sm py-1.5 rounded text-outline font-label-sm text-label-sm hover:text-on-surface transition-all';
+      }
+    });
+
+    const scenario = shapScenarios[key];
+    document.getElementById('base-prob-tag').innerText = scenario.tag;
+
+    const container = document.getElementById('shap-bars-container');
+    container.innerHTML = '';
+
+    scenario.features.forEach(feat => {
+      const row = document.createElement('div');
+      row.className = 'flex flex-col gap-1';
+
+      const header = document.createElement('div');
+      header.className = 'flex justify-between items-center font-body-sm text-body-sm';
+      header.innerHTML = `
+        <span class="text-on-surface font-medium">${feat.name}</span>
+        <span class="font-code-md text-code-md ${feat.pos ? 'text-primary font-semibold' : 'text-error'}">${feat.val}</span>
+      `;
+
+      const track = document.createElement('div');
+      track.className = 'w-full h-2.5 rounded-full bg-surface-container-lowest overflow-hidden flex';
+      
+      const bar = document.createElement('div');
+      bar.className = `h-full rounded-full transition-all duration-500 ${feat.pos ? 'bg-primary' : 'bg-error'}`;
+      bar.style.width = feat.pct + '%';
+
+      track.appendChild(bar);
+      row.appendChild(header);
+      row.appendChild(track);
+      container.appendChild(row);
+    });
+  }
+
+  function copyCode() {
+    const copyBtn = document.getElementById('copy-btn');
+    navigator.clipboard.writeText(`def predict_condition_probabilities(symptom_vector, patient_context):
+    phi = preprocessor.transform(symptom_vector, patient_context)
+    raw_logits = ensemble_model.predict_proba(phi)
+    shap_vals = shap_explainer.shap_values(phi)
+    calibrated_probs = dirichlet_calibrator.transform(raw_logits)
+    uncertainty_idx = calculate_entropy(calibrated_probs)
+    return {"posteriors": calibrated_probs, "attribution": shap_vals, "entropy": uncertainty_idx}`);
+    
+    copyBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span> Copied`;
+    setTimeout(() => {
+      copyBtn.innerHTML = `<span class="material-symbols-outlined text-[14px]">content_copy</span> Copy`;
+    }, 2000);
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    renderStage(0);
+    updateShapScenario('asthma');
+  });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-space-2xl mt-space-3xl"><div class="w-full px-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg border-b border-outline-variant/10"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-bold">VITALIS</span><span class="font-code-md text-code-md text-outline">| CLINICAL PREDICTION SUITE</span></div><div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="ml-architecture" href="#">Precision Calibration</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Algorithmic Governance</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Privacy &amp; HIPAA Enclave</a></div></div><div class="pt-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">VITALIS is an educational and analytical health awareness platform powered by probabilistic machine learning models. It does not provide medical diagnoses or replace licensed clinical judgment. In case of acute symptoms, contact emergency medical care immediately.</p><div class="font-code-md text-code-md text-outline-variant flex-shrink-0">© 2024 VITALIS LABS INC. TELEMETRY ACTIVE.</div></div></div></footer></body></html>
