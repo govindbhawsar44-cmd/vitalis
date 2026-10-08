@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // VITALIS 3D Anatomical Human Body Map & Holographic System Visualization
+const container = document.getElementById('body-scene-container') || document.body;
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+camera.position.set(0, 1.2, 5.2);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting for clinical precision
+const ambientLight = new THREE.AmbientLight(0x0e2a38, 2.5);
+scene.add(ambientLight);
+
+const dirLight1 = new THREE.DirectionalLight(0x0ae2c8, 3.0);
+dirLight1.position.set(5, 10, 7);
+scene.add(dirLight1);
+
+const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 2.5);
+dirLight2.position.set(-5, -5, -4);
+scene.add(dirLight2);
+
+// Master Group for Body
+const bodyGroup = new THREE.Group();
+scene.add(bodyGroup);
+
+// Materials
+const wireMat = new THREE.MeshLambertMaterial({
+    color: 0x144256,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.35
+});
+
+const glassMat = new THREE.MeshPhongMaterial({
+    color: 0x061e29,
+    emissive: 0x0ae2c8,
+    emissiveIntensity: 0.12,
+    shininess: 90,
+    transparent: true,
+    opacity: 0.65
+});
+
+const activeHighlightMat = new THREE.MeshPhongMaterial({
+    color: 0x0ae2c8,
+    emissive: 0x00f2fe,
+    emissiveIntensity: 0.6,
+    wireframe: false,
+    transparent: true,
+    opacity: 0.85
+});
+
+// Build anatomical silhouette using geometric volumes
+// 1. Head & Cranium
+const headGeo = new THREE.SphereGeometry(0.35, 24, 24);
+headGeo.scale(0.85, 1.1, 0.95);
+const headMesh = new THREE.Mesh(headGeo, glassMat);
+headMesh.position.y = 2.65;
+headMesh.userData = { id: 'head', name: 'Cranial & Neurological', symptoms: ['Headache', 'Dizziness', 'Visual Aura'] };
+bodyGroup.add(headMesh);
+
+// 2. Neck
+const neckGeo = new THREE.CylinderGeometry(0.14, 0.17, 0.28, 16);
+const neckMesh = new THREE.Mesh(neckGeo, glassMat);
+neckMesh.position.y = 2.22;
+bodyGroup.add(neckMesh);
+
+// 3. Chest / Respiratory / Cardiac
+const chestGeo = new THREE.CylinderGeometry(0.48, 0.42, 0.82, 20);
+chestGeo.scale(1.15, 1.0, 0.75);
+const chestMesh = new THREE.Mesh(chestGeo, glassMat);
+chestMesh.position.y = 1.72;
+chestMesh.userData = { id: 'chest', name: 'Cardiopulmonary / Thoracic', symptoms: ['Cough', 'Chest Tightness', 'Shortness of Breath'] };
+bodyGroup.add(chestMesh);
+
+// 4. Abdomen / Gastrointestinal
+const abdomenGeo = new THREE.CylinderGeometry(0.42, 0.44, 0.75, 20);
+abdomenGeo.scale(1.05, 1.0, 0.75);
+const abdomenMesh = new THREE.Mesh(abdomenGeo, glassMat);
+abdomenMesh.position.y = 0.98;
+abdomenMesh.userData = { id: 'abdomen', name: 'Gastrointestinal & Hepatic', symptoms: ['Nausea', 'Abdominal Cramps', 'Gastric Reflux'] };
+bodyGroup.add(abdomenMesh);
+
+// 5. Pelvis
+const pelvisGeo = new THREE.CylinderGeometry(0.44, 0.36, 0.45, 18);
+pelvisGeo.scale(1.08, 1.0, 0.8);
+const pelvisMesh = new THREE.Mesh(pelvisGeo, glassMat);
+pelvisMesh.position.y = 0.42;
+bodyGroup.add(pelvisMesh);
+
+// 6. Limbs - Arms
+function createArm(side) {
+    const armGroup = new THREE.Group();
+    // Shoulder joint
+    const shoulderGeo = new THREE.SphereGeometry(0.18, 16, 16);
+    const shoulder = new THREE.Mesh(shoulderGeo, glassMat);
+    shoulder.position.set(side * 0.68, 2.05, 0);
+    armGroup.add(shoulder);
+
+    // Upper arm
+    const upperGeo = new THREE.CylinderGeometry(0.12, 0.10, 0.75, 14);
+    const upper = new THREE.Mesh(upperGeo, glassMat);
+    upper.position.set(side * 0.78, 1.55, 0);
+    upper.rotation.z = side * -0.15;
+    armGroup.add(upper);
+
+    // Elbow
+    const elbowGeo = new THREE.SphereGeometry(0.12, 14, 14);
+    const elbow = new THREE.Mesh(elbowGeo, glassMat);
+    elbow.position.set(side * 0.88, 1.15, 0);
+    armGroup.add(elbow);
+
+    // Forearm
+    const foreGeo = new THREE.CylinderGeometry(0.10, 0.08, 0.72, 14);
+    const fore = new THREE.Mesh(foreGeo, glassMat);
+    fore.position.set(side * 0.98, 0.75, 0.05);
+    fore.rotation.z = side * -0.12;
+    armGroup.add(fore);
+
+    return armGroup;
+}
+bodyGroup.add(createArm(1));
+bodyGroup.add(createArm(-1));
+
+// 7. Limbs - Legs
+function createLeg(side) {
+    const legGroup = new THREE.Group();
+    // Upper Leg (Femur)
+    const upperGeo = new THREE.CylinderGeometry(0.20, 0.15, 1.1, 16);
+    const upper = new THREE.Mesh(upperGeo, glassMat);
+    upper.position.set(side * 0.28, -0.32, 0);
+    legGroup.add(upper);
+
+    // Knee joint
+    const kneeGeo = new THREE.SphereGeometry(0.15, 14, 14);
+    const knee = new THREE.Mesh(kneeGeo, glassMat);
+    knee.position.set(side * 0.28, -0.92, 0.02);
+    knee.userData = { id: 'joints', name: 'Musculoskeletal & Joints', symptoms: ['Joint Pain', 'Mobility Stiffness', 'Fatigue'] };
+    legGroup.add(knee);
+
+    // Lower Leg
+    const lowerGeo = new THREE.CylinderGeometry(0.14, 0.11, 1.15, 16);
+    const lower = new THREE.Mesh(lowerGeo, glassMat);
+    lower.position.set(side * 0.28, -1.55, 0);
+    legGroup.add(lower);
+
+    return legGroup;
+}
+bodyGroup.add(createLeg(1));
+bodyGroup.add(createLeg(-1));
+
+// 8. Internal Holographic Bio-Plexus Points (Glowing nodes)
+const nodesGroup = new THREE.Group();
+const nodePoints = [
+    { pos: [0, 2.7, 0.15], id: 'head', label: 'Cranial Nodes', color: 0x00f2fe },
+    { pos: [0, 1.85, 0.22], id: 'chest', label: 'Pulmonary Axis', color: 0x0ae2c8 },
+    { pos: [-0.18, 1.7, 0.15], id: 'heart', label: 'Cardiac Hub', color: 0x38ef7d },
+    { pos: [0, 1.05, 0.2], id: 'abdomen', label: 'Enteric Network', color: 0x3b82f6 },
+    { pos: [0.28, -0.92, 0.15], id: 'joints', label: 'Peripheral Joint', color: 0x0ae2c8 },
+    { pos: [-0.28, -0.92, 0.15], id: 'joints', label: 'Peripheral Joint', color: 0x0ae2c8 }
+];
+
+const glowingRings = [];
+nodePoints.forEach(pt => {
+    const pGeo = new THREE.SphereGeometry(0.05, 12, 12);
+    const pMat = new THREE.MeshBasicMaterial({ color: pt.color });
+    const pMesh = new THREE.Mesh(pGeo, pMat);
+    pMesh.position.set(pt.pos[0], pt.pos[1], pt.pos[2]);
+    nodesGroup.add(pMesh);
+
+    // Orbital ring
+    const ringGeo = new THREE.RingGeometry(0.08, 0.11, 24);
+    const ringMat = new THREE.MeshBasicMaterial({ color: pt.color, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set(pt.pos[0], pt.pos[1], pt.pos[2]);
+    ring.userData = { initialScale: 1.0, speed: 1.5 + Math.random() };
+    glowingRings.push(ring);
+    nodesGroup.add(ring);
+});
+bodyGroup.add(nodesGroup);
+
+// 9. Surrounding Volumetric Orbital Scanning Rings (Scientific Holographic feel)
+const orbitalGroup = new THREE.Group();
+for (let i = 0; i < 3; i++) {
+    const orbitGeo = new THREE.TorusGeometry(1.8 + i * 0.4, 0.005, 8, 72);
+    const orbitMat = new THREE.MeshBasicMaterial({
+        color: i === 1 ? 0x0ae2c8 : 0x1e3a5f,
+        transparent: true,
+        opacity: 0.35 - i * 0.08
+    });
+    const orbit = new THREE.Mesh(orbitGeo, orbitMat);
+    orbit.rotation.x = Math.PI / 2 + (i * 0.35);
+    orbit.rotation.y = i * 0.25;
+    orbitalGroup.add(orbit);
+}
+scene.add(orbitalGroup);
+
+// 10. Ambient Clinical Particle Cloud (Biomarker dust)
+const particleCount = 280;
+const pGeom = new THREE.BufferGeometry();
+const pPositions = new Float32Array(particleCount * 3);
+for (let p = 0; p < particleCount * 3; p += 3) {
+    pPositions[p] = (Math.random() - 0.5) * 6.0;
+    pPositions[p + 1] = (Math.random() - 0.5) * 6.0 + 1.0;
+    pPositions[p + 2] = (Math.random() - 0.5) * 4.0;
+}
+pGeom.setAttribute('position', new THREE.BufferAttribute(pPositions, 3));
+const pMaterial = new THREE.PointsMaterial({
+    color: 0x0ae2c8,
+    size: 0.025,
+    transparent: true,
+    opacity: 0.45
+});
+const particles = new THREE.Points(pGeom, pMaterial);
+scene.add(particles);
+
+// Mouse Interaction & Rotation
+let mouseX = 0;
+let mouseY = 0;
+let targetRotationY = 0;
+let targetRotationX = 0;
+
+window.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    mouseX = x;
+    mouseY = y;
+    targetRotationY = x * 0.6;
+    targetRotationX = -y * 0.25;
+});
+
+// Custom interactive pulse dispatcher
+window.vitalisHighlightRegion = function(regionId) {
+    if (regionId === 'chest') {
+        chestMesh.material = activeHighlightMat;
+        setTimeout(() => chestMesh.material = glassMat, 3000);
+    } else if (regionId === 'head') {
+        headMesh.material = activeHighlightMat;
+        setTimeout(() => headMesh.material = glassMat, 3000);
+    } else if (regionId === 'abdomen') {
+        abdomenMesh.material = activeHighlightMat;
+        setTimeout(() => abdomenMesh.material = glassMat, 3000);
+    }
+};
+
+// Render Loop
+const clock = new THREE.Clock();
+function animate() {
+    requestAnimationFrame(animate);
+    const elapsed = clock.getElapsedTime();
+
+    // Idle subtle rotation & mouse follow
+    bodyGroup.rotation.y += (targetRotationY - bodyGroup.rotation.y + Math.sin(elapsed * 0.5) * 0.08) * 0.05;
+    bodyGroup.rotation.x += (targetRotationX - bodyGroup.rotation.x) * 0.05;
+
+    orbitalGroup.rotation.z = elapsed * 0.08;
+    orbitalGroup.rotation.y = elapsed * 0.05;
+
+    // Pulse node rings
+    glowingRings.forEach((r, idx) => {
+        const s = 1.0 + Math.sin(elapsed * 2.5 + idx) * 0.35;
+        r.scale.set(s, s, s);
+    });
+
+    particles.rotation.y = elapsed * 0.02;
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// Resize listener
+window.addEventListener('resize', () => {
+    const nw = container.clientWidth || window.innerWidth;
+    const nh = container.clientHeight || window.innerHeight;
+    camera.aspect = nw / nh;
+    camera.updateProjectionMatrix();
+    renderer.setSize(nw, nh);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+</body>
+</html>
