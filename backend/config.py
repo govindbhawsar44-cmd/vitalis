@@ -1,11 +1,11 @@
-﻿import os
+import os
 from pydantic import BaseModel
 
 class Settings(BaseModel):
     PROJECT_NAME: str = "VITALIS Health Intelligence Platform"
     VERSION: str = "4.2.0"
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
-    PORT: int = int(os.getenv("PORT", 8000))
+    PORT: int = int(os.getenv("PORT", 10000))
     HOST: str = os.getenv("HOST", "0.0.0.0")
     
     # Security
