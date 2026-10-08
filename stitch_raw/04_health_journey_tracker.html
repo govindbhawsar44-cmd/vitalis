@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#ffb95f","outline-variant":"#3b4a46","primary-fixed-dim":"#00dfc5","surface-container-lowest":"#0a0e13","primary":"#4cffe4","tertiary-fixed":"#ffddb8","on-background":"#e0e2ea","surface-bright":"#36393f","surface-tint":"#00dfc5","on-tertiary":"#472a00","secondary":"#b4c5ff","surface-container":"#1c2025","on-secondary":"#002a78","background":"#101419","outline":"#849490","secondary-container":"#0053db","on-tertiary-fixed":"#2a1700","surface-dim":"#101419","on-primary-fixed-variant":"#005046","primary-container":"#0ae2c8","on-primary-fixed":"#00201b","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#cdd7ff","on-primary":"#003730","surface-container-low":"#181c21","on-surface-variant":"#bacac5","inverse-on-surface":"#2d3136","tertiary-container":"#ffbd6a","tertiary":"#ffe1c1","inverse-surface":"#e0e2ea","surface":"#101419","on-error":"#690005","surface-container-highest":"#31353b","surface-variant":"#31353b","error-container":"#93000a","on-tertiary-fixed-variant":"#653e00","on-error-container":"#ffdad6","inverse-primary":"#006b5e","on-tertiary-container":"#784b00","error":"#ffb4ab","on-secondary-fixed":"#00174b","secondary-fixed-dim":"#b4c5ff","surface-container-high":"#262a30","on-primary-container":"#006054","on-surface":"#e0e2ea","primary-fixed":"#47fce1"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.75rem","space-xl":"2rem","space-xs":"0.5rem","margin-desktop":"3rem","space-3xl":"4rem","margin-mobile":"1rem","space-2xs":"0.25rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-desktop":"1.5rem","space-md":"1rem","space-4xl":"6rem","space-2xl":"3rem","gutter-mobile":"1rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"body-md":["Inter"],"headline-2xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"code-lg":["JetBrains Mono"],"label-sm":["Inter"],"label-caps":["JetBrains Mono"],"headline-2xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-2xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-2xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><img alt="VITALIS Precision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY_iV4nQGbhuLwb0wYMLLKlYEudWtiChYc_HO52rmb7L2PS8ije0cLJOk_K1mv8QhsqlVDEK9gxv2KKofgldgLYfMb3lBwhh5QkI0oTeyXskUD8SbaLPNj8T-4sF7KaKnXv6T4bccVhuFZJcONmcNhoUMC1uS4Fpr3Y6BeVKphaaq1jeU3zOHymdD4B95plLOCkbuRjdOodqvwxP0lxSzbTyDCwBS10sfrhbFo8co9Q9AOPUa2NjYuP0Q"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">VITALIS</span><span class="font-label-caps text-label-caps text-outline tracking-wider">BIOMETRIC ML ANALYTICS</span></div></div><div class="hidden 2xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-code-md text-code-md text-primary tracking-wide">MODEL ACTIVE: VIT-ML-v4.2</span><span class="font-code-md text-code-md text-outline">(CONFIDENCE INTERVAL EVALUATOR)</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary border-b border-primary font-body-md text-body-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="overview-hero" href="#">Overview / Hero</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="symptom-analyzer" href="#">Symptom Analyzer</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="results-probabilities" href="#">Results &amp; Probabilities</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="health-journey-trends" href="#">Health Journey &amp; Trends</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="ml-architecture" href="#">ML Architecture</a></nav><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">shield</span><span class="font-label-sm text-label-sm text-outline">Health Awareness Tool • Not an Emergency Service</span></div><div class="flex items-center p-space-2xs rounded bg-surface-container border border-outline-variant/40"><button aria-label="Theme Mode Toggle" class="p-space-2xs rounded text-primary hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><a class="relative inline-flex items-center justify-center px-space-md py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-md font-semibold transition-all hover:bg-primary shadow-[0_0_20px_rgba(10,226,200,0.3)] hover:shadow-[0_0_28px_rgba(10,226,200,0.5)] active:scale-[0.98]" data-path="symptom-analyzer" href="#"><span class="relative z-10 flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">neurology</span>Start Analysis</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden bg-surface-container-lowest py-space-2xl px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+<div class="absolute -top-32 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-28 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto flex flex-col gap-space-2xl">
+<div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-space-lg pb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Telemetry Session active</span>
+<span class="text-outline text-body-sm">•</span>
+<span class="font-code-md text-code-md text-outline">EPISODE #TRK-9042-REV3</span>
+</div>
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight font-bold">
+            Longitudinal Recovery &amp; Action Protocol
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Deterministic triage pathways calibrated against 72-hour biometric progression. Track respiratory vectors and clinical safety thresholds.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full lg:w-auto">
+<button class="flex-1 lg:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md transition-all shadow-md" id="open-drawer-btn">
+<span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
+<span>Historical Logs (3)</span>
+</button>
+<button class="flex-1 lg:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-all shadow-sm" id="export-summary-btn">
+<span class="material-symbols-outlined text-secondary text-[20px]">sim_card_download</span>
+<span>Export Clinical PDF</span>
+</button>
+<button class="flex-1 lg:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded bg-primary-container text-on-primary font-headline-md text-headline-md font-semibold hover:bg-primary transition-all shadow-xl" id="log-observation-btn">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Log Daily Observation</span>
+</button>
+</div>
+</div>
+<div class="relative w-full rounded-xl bg-surface-container-low p-space-lg md:p-space-xl shadow-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-lg">
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Dynamic Clinical Pathway</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-semibold">Triage Progression Vectors</h2>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm">Standard CDC/WHO Ambulatory Pathway</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<div class="relative p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-space-2xs rounded bg-primary-container text-on-primary font-label-caps text-label-caps font-bold">STAGE 01</span>
+<span class="font-code-md text-code-md text-primary font-bold">OCT 26 • ACTIVE</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold pt-space-xs">TODAY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Acute symptom onset isolation, high volume rehydration &amp; biomarker stabilization tracking.</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+<div class="relative p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps">STAGE 02</span>
+<span class="font-code-md text-code-md text-outline">OCT 27-28</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold pt-space-xs">NEXT 24–48 HOURS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous temperature mapping, mucus profile evolution &amp; pulse oximeter monitoring.</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary/40 h-full w-1/3"></div>
+</div>
+</div>
+<div class="relative p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps">STAGE 03</span>
+<span class="font-code-md text-code-md text-outline">OCT 29–31</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold pt-space-xs">PERSISTENCE (&gt;5 DAYS)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Assessment of secondary bacterial infection signs or delayed immune clearance delays.</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-surface-container-highest h-full w-0"></div>
+</div>
+</div>
+<div class="relative p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-label-caps text-label-caps">ESCALATION</span>
+<span class="font-code-md text-code-md text-error">CLINIC TRIGGER</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold pt-space-xs">CONSULTATION</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">In-person auscultation, diagnostic panel labs, and prescription antimicrobials if indicated.</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-error/30 h-full w-0"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Clinical Action Directives</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Tiered Recovery Action Plan</h2>
+</div>
+<span class="font-code-md text-code-md text-outline">3 PROTOCOLS IDENTIFIED</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<div class="group relative rounded-xl bg-surface-container p-space-lg flex flex-col justify-between shadow-lg transition-transform hover:-translate-y-1">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest font-semibold">TIER 01 • ACTIVE NOW</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">water_drop</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Immediate Supportive Care</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-space-2xs">Foundational interventions targeted at mucosal barrier repair and fever mitigation.</p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">local_drink</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Fluid Loading (2.5L / day)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Warm herbal broths, electrolyte solution, and warm water. Avoid diuretic caffeinated beverages.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">air</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Airway Humidification &amp; Rest</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Maintain ambient indoor relative humidity between 45–55%. Limit phonation and vocal strain.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">thermostat</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">AM/PM Temperature Logging</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Log oral baseline daily at 08:00 and 20:00 to isolate diurnal spikes and antipyretic efficacy.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Compliance: 2/3 complete</span>
+<span class="font-code-md text-code-md text-primary">STATUS: ENGAGED</span>
+</div>
+</div>
+<div class="group relative rounded-xl bg-surface-container p-space-lg flex flex-col justify-between shadow-lg transition-transform hover:-translate-y-1">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest font-semibold">TIER 02 • MONITORING</span>
+</div>
+<span class="material-symbols-outlined text-tertiary-container text-[24px]">visibility</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Watchlist &amp; Signal Shift</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-space-2xs">Key sensory indicators denoting normal viral resolution versus lower-tract involvement.</p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] flex-shrink-0 mt-0.5">pulmonology</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Cough Progression Shift</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Note transitions from dry tickle to purulent sputum (yellow/greenish) or paroxysmal coughing spasms.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] flex-shrink-0 mt-0.5">monitor_heart</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Peripheral SpO2 &gt;95%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Check finger oximeter twice daily. Sustained drop under 94% on room air mandates clinical escalation.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] flex-shrink-0 mt-0.5">battery_charging_full</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Exertional Recovery Rate</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Monitor subjective lethargy score when executing lightweight domestic ambulation.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">Sensory sensitivity: High</span>
+<span class="font-code-md text-code-md text-tertiary-fixed-dim">STANDBY WATCH</span>
+</div>
+</div>
+<div class="group relative rounded-xl bg-surface-container p-space-lg flex flex-col justify-between shadow-lg transition-transform hover:-translate-y-1">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps text-error tracking-widest font-semibold">TIER 03 • ESCALATION</span>
+</div>
+<span class="material-symbols-outlined text-error text-[24px]">medical_services</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Seek Professional Care</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-space-2xs">Immediate triggers requiring same-day outpatient clinic or urgent medical evaluation.</p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-error text-[20px] flex-shrink-0 mt-0.5">acute</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Fever &gt;72 Hours</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pyrexia &gt;38.5°C unmitigated by standard acetaminophen or ibuprofen administration.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-error text-[20px] flex-shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Resting Dyspnea / Wheezing</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Noticeable shortness of breath when seated stationary, audible stridor, or intercostal retractions.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-error text-[20px] flex-shrink-0 mt-0.5">trending_up</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Secondary Rebound Fever</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sudden return of sharp chest discomfort or high fever after an initial 24-hour period of apparent remission.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">Threshold safety filter active</span>
+<span class="font-code-md text-code-md text-error">RED LINE CRITERIA</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-8 flex flex-col gap-space-md rounded-xl bg-surface-container p-space-lg md:p-space-xl shadow-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase">Biometric Trajectory</span>
+<span class="px-space-2xs py-0 rounded bg-surface-container-high text-outline text-label-sm font-code-md">OCT 24 - OCT 26</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Longitudinal Telemetry Sparklines</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Fatigue
+              </span>
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Cough Freq
+              </span>
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-tertiary-container">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span> Temp (°C)
+              </span>
+</div>
+</div>
+<div class="relative w-full rounded bg-surface-container-lowest p-space-md overflow-hidden">
+<div class="absolute inset-0 grid grid-rows-4 grid-cols-3 pointer-events-none opacity-10">
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+<div class="bg-outline/20"></div>
+<div class="bg-outline/10"></div>
+</div>
+<div class="relative w-full h-64 flex flex-col justify-between z-10">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 600 220">
+<defs>
+<lineargradient id="fatigueGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4cffe4" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#4cffe4" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="coughGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#b4c5ff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#b4c5ff" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 60 170 Q 280 120 300 110 T 540 60 L 540 210 L 60 210 Z" fill="url(#fatigueGradient)"></path>
+<path d="M 60 170 Q 280 120 300 110 T 540 60" fill="none" stroke="#4cffe4" stroke-linecap="round" stroke-width="3"></path>
+<path d="M 60 145 Q 280 95 300 95 T 540 70 L 540 210 L 60 210 Z" fill="url(#coughGradient)"></path>
+<path d="M 60 145 Q 280 95 300 95 T 540 70" fill="none" stroke="#b4c5ff" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M 60 185 Q 280 80 300 70 T 540 40" fill="none" stroke="#ffbd6a" stroke-linecap="round" stroke-width="3"></path>
+<circle class="hover:r-7 transition-all cursor-pointer" cx="60" cy="170" fill="#101419" r="5" stroke="#4cffe4" stroke-width="2.5"></circle>
+<circle class="hover:r-7 transition-all cursor-pointer" cx="300" cy="110" fill="#101419" r="5" stroke="#4cffe4" stroke-width="2.5"></circle>
+<circle class="animate-pulse" cx="540" cy="60" fill="#4cffe4" r="6" stroke="#101419" stroke-width="2"></circle>
+<circle cx="60" cy="145" fill="#101419" r="4" stroke="#b4c5ff" stroke-width="2"></circle>
+<circle cx="300" cy="95" fill="#101419" r="4" stroke="#b4c5ff" stroke-width="2"></circle>
+<circle cx="540" cy="70" fill="#b4c5ff" r="5" stroke="#101419" stroke-width="2"></circle>
+<circle cx="60" cy="185" fill="#101419" r="4" stroke="#ffbd6a" stroke-width="2"></circle>
+<circle cx="300" cy="70" fill="#101419" r="4" stroke="#ffbd6a" stroke-width="2"></circle>
+<circle cx="540" cy="40" fill="#ffbd6a" r="6" stroke="#101419" stroke-width="2"></circle>
+</svg>
+<div class="flex justify-between items-center text-outline font-code-md text-code-md px-6 pt-2">
+<div class="text-left">
+<span class="text-on-surface font-semibold">DAY 01</span>
+<span class="block text-body-sm text-outline">Oct 24</span>
+</div>
+<div class="text-center">
+<span class="text-on-surface font-semibold">DAY 02</span>
+<span class="block text-body-sm text-outline">Oct 25</span>
+</div>
+<div class="text-right">
+<span class="text-primary font-bold">DAY 03 (TODAY)</span>
+<span class="block text-body-sm text-primary">Oct 26</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-outline">FATIGUE INDEX</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-primary font-bold">2 → 4 → 6</span>
+<span class="font-code-md text-code-md text-primary">Ascending / Plateau</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Peaked at 14:00 today; daytime hypersomnia observed.</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-outline">COUGH SEVERITY</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-secondary font-bold">3 → 5 → 6</span>
+<span class="font-code-md text-code-md text-secondary">Active Plateau</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Transitioning to occasional productive expectoration.</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-outline">CORE TEMPERATURE</span>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-tertiary-container font-bold">37.1 → 38.2°C</span>
+<span class="font-code-md text-code-md text-tertiary-container">+1.1°C Shift</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Responsive to hydration; low-grade systemic pyrexia.</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container p-space-lg flex flex-col gap-space-md shadow-lg h-full">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Observation Log</h3>
+<span class="material-symbols-outlined text-outline text-[20px]">feed</span>
+</div>
+<div class="flex flex-col gap-space-md relative pl-4 before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<div class="relative flex flex-col gap-1 pl-space-xs">
+<span class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-outline"></span>
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-outline">DAY 1 • OCT 24</span>
+<span class="px-space-2xs rounded bg-surface-container-high text-on-surface-variant font-code-md text-label-sm">MILD 2/10</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Initial dry tickle in pharynx</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Irritation noted post-exercise. No systemic malaise, clear nasal passages, vital signs nominal.
+                </p>
+</div>
+<div class="relative flex flex-col gap-1 pl-space-xs">
+<span class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-tertiary-container"></span>
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-tertiary-container">DAY 2 • OCT 25</span>
+<span class="px-space-2xs rounded bg-surface-container-high text-tertiary-fixed-dim font-code-md text-label-sm">MODERATE 5/10</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Dry cough worsened + Low fever onset</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Evening chills reported. Oral temperature measured at 38.0°C. Hydration therapy initiated.
+                </p>
+</div>
+<div class="relative flex flex-col gap-1 pl-space-xs">
+<span class="absolute -left-[19px] top-1.5 w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-primary font-bold">DAY 3 • TODAY (OCT 26)</span>
+<span class="px-space-2xs rounded bg-primary/20 text-primary font-code-md text-label-sm font-semibold">MODERATE 6/10</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Fatigue peaked, chest tightness noted</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Substernal pressure during deep exhalation. Temperature 38.2°C at 12:45. SpO2 constant at 97%.
+                </p>
+</div>
+</div>
+<button class="w-full mt-auto py-space-xs px-space-sm rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-md text-body-md transition-colors flex items-center justify-center gap-space-xs" id="quick-add-note-btn">
+<span class="material-symbols-outlined text-primary text-[18px]">edit_note</span>
+<span>Append Clinician Note</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="relative rounded-xl overflow-hidden bg-surface-container-low p-space-lg flex flex-col justify-between shadow-lg">
+<div class="flex flex-col gap-space-xs max-w-lg z-10">
+<span class="font-label-caps text-label-caps text-primary uppercase">Biometric Telemetry Capture</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Connected Smart Device Sync</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Seamlessly streams sleep cycle telemetry, nocturnal respiratory rates, and HR variance directly into the longitudinal evaluator.
+            </p>
+</div>
+<div class="pt-space-lg flex items-center gap-space-md z-10">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-code-md text-code-md text-on-surface">APPLE HEALTH • CONNECTED</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-code-md text-code-md text-outline">WITHINGS SCALE • OFFLINE</span>
+</div>
+</div>
+<div class="mt-space-md rounded-lg overflow-hidden h-36 relative">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity hover:opacity-80 transition-opacity" data-alt="Close-up macro shot of modern biometric sensor interface and medical smartwatch display in an ambient dimly lit high-tech clinical dark obsidian environment with luminous cyan glowing telemetry graphs and vital readouts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXX7Lwleux8Ynmn4YgzFx9EP6CLUpf7zvxiN10ncqk1s2eeBsT3fFBNRFCX3Eym-v9EsAsjURkEjv65bmQp4f8RuaZEHre-saygsxPjTz4c28PLVpkJ8n7zwHcFRmlY4t3SRV6qBjuSta-sNr1Vkq7c2AYWy9RLFy_nKggzCtlSAb4jBjZGCLP3I-q-GRxkYmt7HJ9-8KlCHJhGPwvHc9Y7xXHjrDO5wRer8GmJKhSYXfvxGfkXebYHg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-surface-container-low p-space-lg flex flex-col justify-between shadow-lg">
+<div class="flex flex-col gap-space-xs max-w-lg z-10">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Clinical Decision Support</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Physician Preparation Kit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Generate an HL7/FHIR compatible telemetry report ready for intake nurses and virtual care providers.
+            </p>
+</div>
+<div class="pt-space-lg flex items-center gap-space-sm z-10">
+<span class="material-symbols-outlined text-secondary text-[24px]">assignment_turned_in</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Standard EHR Compatible Encrypted Archive</span>
+</div>
+<div class="mt-space-md rounded-lg overflow-hidden h-36 relative">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity hover:opacity-80 transition-opacity" data-alt="A clean modern medical diagnostic laboratory consultation desk with modern tablet computing device displaying holographic medical charts and vitals in a moody clinical dark room setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfPEOWZCX4Bp7Qsz6yM4Yc5ieSETY3rp-AHSy_a4mKlIVhmhAdk3YkRfTBlzpkXjjA6zUDn6I2T-nWLR1m577EgMf4DEoagJDOr7xapMj7_oI1IxkzktrQ7VklknjdttJaSaBwS63aJPfBua0UEXNjyTmYpWIzxyFwdgBNP3rTkyJRGZ_NpDTCNUWNO9x1djEz7ERUwtuY0eHeLxO9WC87VJrccOB_TJC6O6ktMIvr9zL-SmZlF2PGuA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="drawer-overlay">
+<div class="absolute top-0 right-0 h-full w-full max-w-md bg-surface-container-low p-space-lg flex flex-col gap-space-lg shadow-2xl transition-transform duration-300 translate-x-full" id="drawer-panel">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary uppercase">Saved Diagnostic Telemetry</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Historical Episodes</h2>
+</div>
+<button class="p-space-2xs rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors" id="close-drawer-btn">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Review previously logged analytical sessions to contrast symptomatic correlation profiles and recovery timelines.
+      </p>
+<div class="flex flex-col gap-space-md overflow-y-auto pr-1">
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-primary font-bold">EPISODE #TRK-9042</span>
+<span class="px-space-2xs rounded bg-primary/20 text-primary font-label-caps text-label-caps">CURRENT</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Acute Upper Respiratory Trajectory</span>
+<span class="font-body-sm text-body-sm text-outline">Oct 24, 2024 – Present (3 Days Active)</span>
+<div class="flex items-center gap-space-sm pt-space-xs text-body-sm text-on-surface-variant">
+<span>Correlation: Rhinovirus-like (88%)</span>
+<span>•</span>
+<span>Peak Temp: 38.2°C</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-outline">EPISODE #TRK-8819</span>
+<span class="px-space-2xs rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">RESOLVED</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Seasonal Pollen-Induced Allergic Rhinitis</span>
+<span class="font-body-sm text-body-sm text-outline">Aug 12 – Aug 18, 2024 (7 Days Duration)</span>
+<div class="flex items-center gap-space-sm pt-space-xs text-body-sm text-on-surface-variant">
+<span>Primary Symptom: Histamine response</span>
+<span>•</span>
+<span>Resolved with Antihistamines</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-outline">EPISODE #TRK-7412</span>
+<span class="px-space-2xs rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">ARCHIVED</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Post-Viral Bronchial Hyperresponsiveness</span>
+<span class="font-body-sm text-body-sm text-outline">Feb 02 – Feb 14, 2024 (12 Days Duration)</span>
+<div class="flex items-center gap-space-sm pt-space-xs text-body-sm text-on-surface-variant">
+<span>Primary Marker: Nocturnal dry cough</span>
+<span>•</span>
+<span>Clinical Follow-up Completed</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-space-md flex flex-col gap-space-xs">
+<button class="w-full py-space-sm rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-md text-body-md transition-all flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">manage_search</span>
+<span>Open Full Longitudinal Vault</span>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-md opacity-0 pointer-events-none transition-opacity duration-200" id="log-modal">
+<div class="w-full max-w-xl bg-surface-container-low rounded-xl p-space-xl flex flex-col gap-space-lg shadow-2xl">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Day 04 Observation Intake</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Record Biometric Update</h2>
+</div>
+<button class="p-space-2xs rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" id="observation-form">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-outline uppercase">Overall Symptom Severity (1 to 10)</label>
+<div class="flex items-center gap-space-md">
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" id="severity-slider" max="10" min="1" type="range" value="6"/>
+<span class="font-headline-md text-headline-md text-primary font-bold w-8 text-center" id="severity-display">6</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-outline uppercase">Oral Temp (°C)</label>
+<input class="w-full bg-surface-container text-on-surface font-code-md text-code-md px-space-sm py-space-xs rounded focus:outline-none focus:ring-1 focus:ring-primary" step="0.1" type="number" value="38.1"/>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-outline uppercase">Pulse Oximetry SpO2 (%)</label>
+<input class="w-full bg-surface-container text-on-surface font-code-md text-code-md px-space-sm py-space-xs rounded focus:outline-none focus:ring-1 focus:ring-primary" step="1" type="number" value="98"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-outline uppercase">Clinical Observations / Subjective Notes</label>
+<textarea class="w-full bg-surface-container text-on-surface font-body-sm text-body-sm p-space-sm rounded focus:outline-none focus:ring-1 focus:ring-primary resize-none" placeholder="Specify sputum color, shortness of breath on exertion, throat pain level..." rows="3"></textarea>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-headline-md text-body-md hover:bg-surface-container-high transition-colors" id="cancel-modal-btn" type="button">
+            Cancel
+          </button>
+<button class="px-space-lg py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-md font-semibold hover:bg-primary transition-all shadow-md" type="submit">
+            Commit Telemetry Entry
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md shadow-2xl flex items-center gap-space-sm border-l-4 border-primary transition-all duration-300 translate-y-20 opacity-0 pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span id="toast-text">Observation securely recorded to episode track.</span>
+</div>
+</div>
+<script>
+  (function() {
+    const openDrawerBtn = document.getElementById('open-drawer-btn');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerPanel = document.getElementById('drawer-panel');
+
+    const openModalBtn = document.getElementById('log-observation-btn');
+    const quickAddBtn = document.getElementById('quick-add-note-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const cancelModalBtn = document.getElementById('cancel-modal-btn');
+    const logModal = document.getElementById('log-modal');
+    const observationForm = document.getElementById('observation-form');
+    const severitySlider = document.getElementById('severity-slider');
+    const severityDisplay = document.getElementById('severity-display');
+    const exportBtn = document.getElementById('export-summary-btn');
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
+
+    function showToast(message) {
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    function openDrawer() {
+      drawerOverlay.classList.remove('pointer-events-none');
+      drawerOverlay.classList.remove('opacity-0');
+      drawerOverlay.classList.add('opacity-100');
+      drawerPanel.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      drawerOverlay.classList.add('opacity-0');
+      drawerPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawerOverlay.classList.add('pointer-events-none');
+      }, 300);
+    }
+
+    function openModal() {
+      logModal.classList.remove('pointer-events-none', 'opacity-0');
+      logModal.classList.add('opacity-100');
+    }
+
+    function closeModal() {
+      logModal.classList.add('opacity-0');
+      setTimeout(() => {
+        logModal.classList.add('pointer-events-none');
+      }, 200);
+    }
+
+    if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) {
+      drawerOverlay.addEventListener('click', (e) => {
+        if (e.target === drawerOverlay) closeDrawer();
+      });
+    }
+
+    if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+    if (quickAddBtn) quickAddBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+
+    if (severitySlider && severityDisplay) {
+      severitySlider.addEventListener('input', (e) => {
+        severityDisplay.textContent = e.target.value;
+      });
+    }
+
+    if (observationForm) {
+      observationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        closeModal();
+        showToast('Telemetry committed: Day 04 appended successfully.');
+      });
+    }
+
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        showToast('Assembling FHIR-Compliant Telemetry PDF summary...');
+        setTimeout(() => {
+          showToast('Clinical PDF ready for print / physician transfer.');
+        }, 1200);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-space-2xl mt-space-3xl"><div class="w-full px-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg border-b border-outline-variant/10"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-bold">VITALIS</span><span class="font-code-md text-code-md text-outline">| CLINICAL PREDICTION SUITE</span></div><div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="ml-architecture" href="#">Precision Calibration</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Algorithmic Governance</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Privacy &amp; HIPAA Enclave</a></div></div><div class="pt-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">VITALIS is an educational and analytical health awareness platform powered by probabilistic machine learning models. It does not provide medical diagnoses or replace licensed clinical judgment. In case of acute symptoms, contact emergency medical care immediately.</p><div class="font-code-md text-code-md text-outline-variant flex-shrink-0">© 2024 VITALIS LABS INC. TELEMETRY ACTIVE.</div></div></div></footer></body></html>
