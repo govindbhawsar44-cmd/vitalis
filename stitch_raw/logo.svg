@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- Vitalis Geometric Precision Mark: Stylized Caduceus / DNA Wave / Pulse Beacon -->
+  <defs>
+    <linearGradient id="vitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#0AE2C8"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0AE2C8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4, 4)">
+    <!-- Hexagonal Precision Chassis -->
+    <polygon points="16,1 29,8 29,24 16,31 3,24 3,8" stroke="url(#vitGrad)" stroke-width="1.8" fill="#0B131D" fill-opacity="0.7"/>
+    <!-- Medical Pulse Cross / Sinus Wave -->
+    <path d="M7 16 H11 L13 11 L16 22 L19 13 L21 16 H25" stroke="#00F2FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Central clinical beacon node -->
+    <circle cx="16" cy="16" r="2.2" fill="#FFFFFF"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="44" y="24" font-family="Plus Jakarta Sans, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" letter-spacing="2.5" fill="#F8FAFC">VITALIS</text>
+  <text x="135" y="16" font-family="JetBrains Mono, monospace" font-size="8" font-weight="600" fill="#0AE2C8" letter-spacing="0.5">ML.04</text>
+</svg>
