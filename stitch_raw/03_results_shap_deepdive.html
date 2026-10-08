@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#ffb95f","outline-variant":"#3b4a46","primary-fixed-dim":"#00dfc5","surface-container-lowest":"#0a0e13","primary":"#4cffe4","tertiary-fixed":"#ffddb8","on-background":"#e0e2ea","surface-bright":"#36393f","surface-tint":"#00dfc5","on-tertiary":"#472a00","secondary":"#b4c5ff","surface-container":"#1c2025","on-secondary":"#002a78","background":"#101419","outline":"#849490","secondary-container":"#0053db","on-tertiary-fixed":"#2a1700","surface-dim":"#101419","on-primary-fixed-variant":"#005046","primary-container":"#0ae2c8","on-primary-fixed":"#00201b","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#cdd7ff","on-primary":"#003730","surface-container-low":"#181c21","on-surface-variant":"#bacac5","inverse-on-surface":"#2d3136","tertiary-container":"#ffbd6a","tertiary":"#ffe1c1","inverse-surface":"#e0e2ea","surface":"#101419","on-error":"#690005","surface-container-highest":"#31353b","surface-variant":"#31353b","error-container":"#93000a","on-tertiary-fixed-variant":"#653e00","on-error-container":"#ffdad6","inverse-primary":"#006b5e","on-tertiary-container":"#784b00","error":"#ffb4ab","on-secondary-fixed":"#00174b","secondary-fixed-dim":"#b4c5ff","surface-container-high":"#262a30","on-primary-container":"#006054","on-surface":"#e0e2ea","primary-fixed":"#47fce1"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.75rem","space-xl":"2rem","space-xs":"0.5rem","margin-desktop":"3rem","space-3xl":"4rem","margin-mobile":"1rem","space-2xs":"0.25rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-desktop":"1.5rem","space-md":"1rem","space-4xl":"6rem","space-2xl":"3rem","gutter-mobile":"1rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"body-md":["Inter"],"headline-2xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"code-lg":["JetBrains Mono"],"label-sm":["Inter"],"label-caps":["JetBrains Mono"],"headline-2xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-2xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-2xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><img alt="VITALIS Precision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY_iV4nQGbhuLwb0wYMLLKlYEudWtiChYc_HO52rmb7L2PS8ije0cLJOk_K1mv8QhsqlVDEK9gxv2KKofgldgLYfMb3lBwhh5QkI0oTeyXskUD8SbaLPNj8T-4sF7KaKnXv6T4bccVhuFZJcONmcNhoUMC1uS4Fpr3Y6BeVKphaaq1jeU3zOHymdD4B95plLOCkbuRjdOodqvwxP0lxSzbTyDCwBS10sfrhbFo8co9Q9AOPUa2NjYuP0Q"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">VITALIS</span><span class="font-label-caps text-label-caps text-outline tracking-wider">BIOMETRIC ML ANALYTICS</span></div></div><div class="hidden 2xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-code-md text-code-md text-primary tracking-wide">MODEL ACTIVE: VIT-ML-v4.2</span><span class="font-code-md text-code-md text-outline">(CONFIDENCE INTERVAL EVALUATOR)</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary border-b border-primary font-body-md text-body-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="overview-hero" href="#">Overview / Hero</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="symptom-analyzer" href="#">Symptom Analyzer</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="results-probabilities" href="#">Results &amp; Probabilities</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="health-journey-trends" href="#">Health Journey &amp; Trends</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="ml-architecture" href="#">ML Architecture</a></nav><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">shield</span><span class="font-label-sm text-label-sm text-outline">Health Awareness Tool • Not an Emergency Service</span></div><div class="flex items-center p-space-2xs rounded bg-surface-container border border-outline-variant/40"><button aria-label="Theme Mode Toggle" class="p-space-2xs rounded text-primary hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><a class="relative inline-flex items-center justify-center px-space-md py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-md font-semibold transition-all hover:bg-primary shadow-[0_0_20px_rgba(10,226,200,0.3)] hover:shadow-[0_0_28px_rgba(10,226,200,0.5)] active:scale-[0.98]" data-path="symptom-analyzer" href="#"><span class="relative z-10 flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">neurology</span>Start Analysis</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Glow Overlay -->
+<div class="relative w-full overflow-hidden px-margin-mobile md:px-margin-tablet xl:px-margin-desktop py-space-xl">
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/4 -right-24 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Diagnostic Instrument Top Banner -->
+<div class="flex flex-col gap-space-md mb-space-2xl">
+<!-- Telemetry Status Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Telemetry Calibration</span>
+<span class="font-code-md text-code-md text-outline">/</span>
+<span class="font-code-md text-code-md text-on-surface-variant">NODE-RUN #774-ALPHA</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-code-md text-code-md text-outline">INPUT VECTORS: 4 REPORTED</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-on-surface-variant font-code-md text-code-md">AUC: 0.942</span>
+</div>
+</div>
+<!-- Main Headline & Context -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight font-bold">
+            Symptom Correlation Profile
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            Based on the 4 reported symptoms, our trained machine-learning model has cross-referenced statistical health datasets to estimate the following probabilistic patterns.
+          </p>
+</div>
+<div class="lg:col-span-4 flex lg:justify-end">
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-headline-md text-body-md flex items-center gap-space-xs shadow-md" id="exportTeleReport">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Export Clinical Dossier</span>
+</button>
+</div>
+</div>
+<!-- Prominent Uncertainty Notice Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-xl">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-container/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider font-semibold">
+                Probability Estimate Only • Non-Diagnostic Output
+              </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-4xl">
+                These values represent statistical similarity against trained clinical patterns, not a medical diagnosis. Biological individuality, subclinical factors, and non-linear progressions can vary. Consult a qualified physician for clinical evaluation.
+              </p>
+</div>
+</div>
+<div class="flex-shrink-0 self-end md:self-center">
+<span class="font-code-md text-code-md text-outline bg-surface-container-low px-space-sm py-space-2xs rounded">
+              CI: 95% HYP-VERIFIED
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- 1. Primary Probabilistic Distribution (Horizontal Precision Visualization) -->
+<section class="flex flex-col gap-space-md mb-space-3xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">1. Probabilistic Distribution</span>
+<span class="font-code-md text-code-md text-outline">| KERNEL DENSITY DIVERGENCE</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant hidden md:inline-block">SORTED BY POSTERIOR SIMILARITY</span>
+</div>
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Condition A: Dominant Match -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-lg shadow-xl hover:bg-surface-container transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="px-space-xs py-0.5 rounded font-label-caps text-label-caps bg-primary-container text-on-primary font-bold">
+                  PRIMARY CORRELATION
+                </span>
+<span class="font-code-md text-code-md text-primary">VIT-PAT-1082</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">
+                Acute Viral Bronchitis / Upper Respiratory Tract Syndrome
+              </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High Pattern Similarity • Self-Limiting Spectrum</span>
+</div>
+<div class="flex flex-row lg:flex-col items-baseline lg:items-end justify-between lg:justify-center">
+<div class="flex items-baseline gap-space-2xs">
+<span class="font-headline-2xl text-headline-2xl text-primary font-bold tracking-tight">68</span>
+<span class="font-headline-md text-headline-md text-primary">%</span>
+</div>
+<span class="font-code-md text-code-md text-outline">EST. CI [62% — 74%]</span>
+</div>
+</div>
+<!-- Glow Bar Track -->
+<div class="relative w-full h-3 rounded bg-surface-container-highest overflow-hidden mb-space-xs">
+<!-- Confidence Interval Range Band -->
+<div class="absolute top-0 bottom-0 bg-primary/20 rounded" style="left: 62%; width: 12%;"></div>
+<!-- Probability Fill -->
+<div class="h-full bg-gradient-to-r from-secondary-container via-primary-container to-primary rounded transition-all duration-1000 shadow-[0_0_16px_rgba(76,255,228,0.6)]" style="width: 68%;"></div>
+</div>
+<div class="flex justify-between items-center text-outline font-code-md text-code-md">
+<span>0.00 SIMILARITY</span>
+<span class="text-primary font-semibold">68.4% MEAN DENSITY</span>
+<span>1.00 CERTAINTY</span>
+</div>
+</div>
+<!-- Condition B: Secondary Differential -->
+<div class="relative rounded-xl bg-surface-container-low p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="px-space-xs py-0.5 rounded font-label-caps text-label-caps bg-secondary-container text-on-secondary-container font-semibold">
+                  SECONDARY DIFFERENTIAL
+                </span>
+<span class="font-code-md text-code-md text-secondary">VIT-PAT-0419</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">
+                Seasonal Allergenic Rhinotracheitis
+              </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Moderate Overlap • Mucosal Histamine Hypersensitivity</span>
+</div>
+<div class="flex flex-row lg:flex-col items-baseline lg:items-end justify-between lg:justify-center">
+<div class="flex items-baseline gap-space-2xs">
+<span class="font-headline-2xl text-headline-2xl text-secondary font-bold tracking-tight">21</span>
+<span class="font-headline-md text-headline-md text-secondary">%</span>
+</div>
+<span class="font-code-md text-code-md text-outline">EST. CI [17% — 26%]</span>
+</div>
+</div>
+<!-- Secondary Bar Track -->
+<div class="relative w-full h-2.5 rounded bg-surface-container-highest overflow-hidden mb-space-xs">
+<div class="absolute top-0 bottom-0 bg-secondary/20 rounded" style="left: 17%; width: 9%;"></div>
+<div class="h-full bg-secondary-container rounded shadow-[0_0_12px_rgba(0,83,219,0.4)]" style="width: 21%;"></div>
+</div>
+<div class="flex justify-between items-center text-outline font-code-md text-code-md">
+<span>0.00 SIMILARITY</span>
+<span class="text-secondary font-medium">21.0% MEAN DENSITY</span>
+<span>1.00 CERTAINTY</span>
+</div>
+</div>
+<!-- Condition C: Low-Probability Differential -->
+<div class="relative rounded-xl bg-surface-container-low p-space-lg shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="px-space-xs py-0.5 rounded font-label-caps text-label-caps bg-surface-container-highest text-outline font-semibold">
+                  LOW-PROBABILITY DIFFERENTIAL
+                </span>
+<span class="font-code-md text-code-md text-outline">VIT-PAT-0902</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">
+                Early Pneumonic Infiltration (Atypical)
+              </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Atypical Lower Respiratory Pattern • Inconclusive Biomarkers</span>
+</div>
+<div class="flex flex-row lg:flex-col items-baseline lg:items-end justify-between lg:justify-center">
+<div class="flex items-baseline gap-space-2xs">
+<span class="font-headline-2xl text-headline-2xl text-on-surface-variant font-bold tracking-tight">11</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">%</span>
+</div>
+<span class="font-code-md text-code-md text-outline">EST. CI [7% — 15%]</span>
+</div>
+</div>
+<!-- Low Probability Bar Track -->
+<div class="relative w-full h-2 rounded bg-surface-container-highest overflow-hidden mb-space-xs">
+<div class="absolute top-0 bottom-0 bg-outline/20 rounded" style="left: 7%; width: 8%;"></div>
+<div class="h-full bg-outline rounded" style="width: 11%;"></div>
+</div>
+<div class="flex justify-between items-center text-outline font-code-md text-code-md">
+<span>0.00 SIMILARITY</span>
+<span class="text-outline">10.6% MEAN DENSITY</span>
+<span>1.00 CERTAINTY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Core USP Section — 'WHY THIS APPEARED' (Explainable ML Attribution) -->
+<section class="flex flex-col gap-space-lg mb-space-3xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase">Explainable Artificial Intelligence</span>
+<span class="material-symbols-outlined text-[16px] text-primary">auto_awesome</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+            Why This Appeared: Algorithmic Attribution
+          </h2>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap"><span class="font-code-md text-code-md text-outline">SHAPLEY VALUE DECOMPOSITION (VIT-SHAP-v2)</span><button class="px-space-sm py-space-2xs rounded bg-primary/10 border border-primary/30 text-primary font-headline-md text-body-sm font-semibold hover:bg-primary/20 hover:border-primary transition-all flex items-center gap-space-xs shadow-[0_0_12px_rgba(76,255,228,0.2)]" onclick="document.getElementById('shap-modal-overlay').classList.remove('hidden')"><span class="material-symbols-outlined text-[16px]">query_stats</span><span>Explore Full SHAP Attribution Studio</span></button></div>
+</div>
+<!-- Bento Grid for Model Attribution -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Feature Attribution Weights Card (Condition A) -->
+<div class="lg:col-span-7 flex flex-col justify-between rounded-xl bg-surface-container-low p-space-xl shadow-xl">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Positive Symptom Vector Matches</span>
+<span class="font-body-sm text-body-sm text-outline">Reported inputs reinforcing Condition A confidence</span>
+</div>
+<span class="px-space-xs py-space-2xs rounded bg-primary/10 text-primary font-code-md text-code-md font-semibold">
+                3 / 4 MATCHED
+              </span>
+</div>
+<!-- Attributions Items -->
+<div class="flex flex-col gap-space-md mt-space-xs">
+<!-- Item 1 -->
+<div class="flex flex-col gap-space-2xs p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Persistent Dry / Irritant Cough</span>
+</div>
+<span class="font-code-md text-code-md text-primary font-bold">+0.42 WEIGHT</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded overflow-hidden">
+<div class="bg-primary h-full rounded" style="width: 84%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primary driver of bronchial inflammation classification tree.</span>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-space-2xs p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Low-Grade Fever (37.8°C - 38.4°C)</span>
+</div>
+<span class="font-code-md text-code-md text-primary font-bold">+0.28 WEIGHT</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded overflow-hidden">
+<div class="bg-primary h-full rounded" style="width: 56%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Strong temporal indicator for viral host immune response.</span>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-space-2xs p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-headline-md text-body-lg text-on-surface font-medium">Generalized Physical Fatigue</span>
+</div>
+<span class="font-code-md text-code-md text-primary font-bold">+0.19 WEIGHT</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded overflow-hidden">
+<div class="bg-primary h-full rounded" style="width: 38%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Systemic cytokine activation signature correlating with respiratory virus.</span>
+</div>
+</div>
+</div>
+<!-- Counter-Evidence Breakdown -->
+<div class="mt-space-lg pt-space-md bg-surface-container rounded-lg p-space-sm flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Counter-Factor / Negative Attenuation</span>
+<span class="font-code-md text-code-md text-secondary font-bold">-0.31 SHIFT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Absence of Purulent Sputum:</strong> Did not report productive greenish/rusty phlegm. This negative indicator actively lowered the differential probability of classical lobar bacterial pneumonia from 42% down to 11%.
+            </p>
+</div>
+</div>
+<!-- Systemic Overlap & Anatomical Vector Map -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-xl flex flex-col justify-between flex-1">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<span class="font-label-caps text-label-caps text-outline uppercase">Physiological Localization</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+                Systemic Overlap Focal Point
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Respiratory Epithelium &amp; Immune Inflammatory Cascade
+              </p>
+</div>
+<!-- Inline SVG Vector Network Map -->
+<div class="w-full h-48 bg-surface-container rounded-lg relative overflow-hidden flex items-center justify-center p-space-sm">
+<svg class="w-full h-full text-outline-variant" viewbox="0 0 400 200">
+<!-- Grid Lines -->
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="4,4" x1="20" x2="380" y1="50" y2="50"></line>
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="4,4" x1="20" x2="380" y1="100" y2="100"></line>
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="4,4" x1="20" x2="380" y1="150" y2="150"></line>
+<!-- Connector Strands -->
+<path d="M 60 100 Q 140 30 200 80 T 340 100" fill="none" opacity="0.6" stroke="#0053db" stroke-width="2"></path>
+<path d="M 60 100 Q 150 160 260 110 T 340 100" fill="none" opacity="0.8" stroke="#0ae2c8" stroke-width="2"></path>
+<!-- Nodes -->
+<!-- Core Node: Epithelium -->
+<circle cx="200" cy="80" fill="#1c2025" r="14" stroke="#4cffe4" stroke-width="2"></circle>
+<circle cx="200" cy="80" fill="#4cffe4" r="6"></circle>
+<text fill="#e0e2ea" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="200" y="112">EPITHELIAL TISSUE</text>
+<!-- Source Node: Inhalation Vector -->
+<circle cx="60" cy="100" fill="#1c2025" r="8" stroke="#b4c5ff" stroke-width="1.5"></circle>
+<circle cx="60" cy="100" fill="#b4c5ff" r="3"></circle>
+<text fill="#849490" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="60" y="125">AIRWAY ENTRY</text>
+<!-- Target Node: Bronchial Tree -->
+<circle cx="260" cy="110" fill="#1c2025" r="10" stroke="#4cffe4" stroke-width="2"></circle>
+<circle cx="260" cy="110" fill="#4cffe4" r="4"></circle>
+<text fill="#bacac5" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="260" y="135">TRACHEOBRONCHIAL</text>
+<!-- Peripheral Node: Immune Response -->
+<circle cx="340" cy="100" fill="#1c2025" r="7" stroke="#ffb95f" stroke-width="1.5"></circle>
+<circle cx="340" cy="100" fill="#ffb95f" r="2.5"></circle>
+<text fill="#849490" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="340" y="125">CYTOKINE CASCADE</text>
+</svg>
+</div>
+<!-- Deep Neural Network Metadata -->
+<div class="mt-space-md grid grid-cols-2 gap-space-xs pt-space-xs font-code-md text-code-md">
+<div class="bg-surface-container p-space-xs rounded">
+<span class="text-outline block text-[10px]">CORRELATION SEED</span>
+<span class="text-on-surface">V-894-LUNG</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded">
+<span class="text-outline block text-[10px]">VARIANCE RATIO</span>
+<span class="text-primary font-semibold">0.038 (STABLE)</span>
+</div>
+</div>
+</div>
+<!-- Medical Context Laboratory Badge -->
+<div class="rounded-xl bg-surface-container p-space-md flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Multi-Label Cross Entropy</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Synthesized across 142,000 anonymized synthetic triage cases validated by internal clinical safety standards.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Signature Feature — 'Compare Possibilities' Matrix -->
+<section class="flex flex-col gap-space-md mb-space-3xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Differential Comparative Matrix</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+            Compare Differential Possibilities
+          </h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-code-md text-code-md text-on-surface-variant">FULL SYNCHRONIZED BREAKDOWN</span>
+</div>
+</div>
+<!-- Comparative Table Container with Horizontal Scroll fallback -->
+<div class="w-full overflow-x-auto rounded-xl bg-surface-container-low shadow-xl">
+<table class="w-full min-w-[760px] text-left border-collapse">
+<thead>
+<tr class="bg-surface-container">
+<th class="py-space-md px-space-md font-label-caps text-label-caps text-outline uppercase w-1/4">Evaluation Metric</th>
+<th class="py-space-md px-space-md font-headline-md text-body-lg text-primary font-bold w-1/4">
+<div class="flex items-center gap-space-2xs">
+<span>Viral Bronchitis</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary font-code-md text-code-md">68%</span>
+</div>
+</th>
+<th class="py-space-md px-space-md font-headline-md text-body-lg text-secondary font-bold w-1/4">
+<div class="flex items-center gap-space-2xs">
+<span>Allergenic Rhinotracheitis</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary font-code-md text-code-md">21%</span>
+</div>
+</th>
+<th class="py-space-md px-space-md font-headline-md text-body-lg text-on-surface-variant font-bold w-1/4">
+<div class="flex items-center gap-space-2xs">
+<span>Early Pneumonic Infiltrate</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-outline font-code-md text-code-md">11%</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-transparent">
+<!-- Row 1: Matching Reported Symptoms -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-headline-md text-body-md text-on-surface font-semibold">
+                Matching Reported Symptoms
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Cough (dry/persistent)
+                  </span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Low-grade pyrexia
+                  </span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Systemic fatigue
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span> Cough (throat tickle)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span> Mild lethargy
+                  </span>
+<span class="text-outline line-through">Fever (Uncommon)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 text-outline">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">check</span> Cough onset
+                  </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">check</span> Fatigue
+                  </span>
+<span class="text-outline">Low fever (Variable)</span>
+</div>
+</td>
+</tr>
+<!-- Row 2: Unreported Clinical Symptoms -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-headline-md text-body-md text-on-surface font-semibold">
+                Unreported Clinical Symptoms
+              </td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                Purulent sputum, high-spiking chills, hemoptysis.
+              </td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                Ocular pruritus, conjunctival injection, clear watery rhinorrhea.
+              </td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                Pleuritic chest pain, dyspnea on exertion, dense rales.
+              </td>
+</tr>
+<!-- Row 3: Typical Natural Duration -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-headline-md text-body-md text-on-surface font-semibold">
+                Typical Natural Duration
+              </td>
+<td class="py-space-md px-space-md">
+<span class="font-code-md text-code-md text-primary font-semibold">7 — 14 Days</span>
+<span class="block text-body-sm font-body-sm text-outline">Self-limiting gradual resolution</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-code-md text-code-md text-secondary font-semibold">2 — 4 Weeks</span>
+<span class="block text-body-sm font-body-sm text-outline">Persists through allergen exposure</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-code-md text-code-md text-on-surface-variant font-semibold">Variable / Progressive</span>
+<span class="block text-body-sm font-body-sm text-outline">Without targeted intervention</span>
+</td>
+</tr>
+<!-- Row 4: Primary Anatomical System Involved -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-headline-md text-body-md text-on-surface font-semibold">
+                Primary Anatomical System
+              </td>
+<td class="py-space-md px-space-md text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-primary">air</span>
+<span>Tracheobronchial Tree</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">allergies</span>
+<span>Upper Nasopharyngeal Mucosa</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-outline">radiology</span>
+<span>Alveolar Parenchyma &amp; Interstitium</span>
+</div>
+</td>
+</tr>
+<!-- Row 5: Clinical Action Level -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-headline-md text-body-md text-on-surface font-semibold">
+                Suggested Clinical Action Level
+              </td>
+<td class="py-space-md px-space-md">
+<div class="p-space-xs rounded bg-surface-container">
+<span class="font-body-sm text-body-sm text-primary font-medium block">Supportive Care &amp; Hydration</span>
+<span class="text-[11px] font-body-sm text-outline">Antitussive if sleep disrupted; monitor temperature.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="p-space-xs rounded bg-surface-container">
+<span class="font-body-sm text-body-sm text-secondary font-medium block">Allergen Avoidance / H1-Blocker</span>
+<span class="text-[11px] font-body-sm text-outline">Intranasal glucocorticoid review with PCP.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="p-space-xs rounded bg-surface-container">
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim font-medium block">Auscultation &amp; Direct Exam</span>
+<span class="text-[11px] font-body-sm text-outline">Evaluate with physician if fever accelerates.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 4. 'WHEN NOT TO WAIT' — Clinical Red Flag Safety Component -->
+<section class="flex flex-col gap-space-md mb-space-xl">
+<!-- High Contrast Card with Amber / Coral Alert Ambient Glow -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-xl shadow-2xl">
+<!-- Subtle Coral/Amber Ambient Emitter -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-error-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg pb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-error-container/30 text-error flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[30px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-error font-bold uppercase tracking-wider">Triage Override Safety Layer</span>
+<span class="px-space-2xs py-0.5 rounded bg-error-container/40 text-on-error-container font-code-md text-code-md">CRITICAL PROTOCOL</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">
+                When Not To Wait
+              </h2>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Statistical algorithms cannot identify rapid biological deterioration. If any of the following emergent indicators develop, bypass this tool immediately.
+          </p>
+</div>
+<!-- 4 Critical Indicators Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md my-space-lg">
+<!-- Flag 1 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container">
+<div class="w-6 h-6 rounded bg-error-container/40 text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Acute Respiratory Compromise</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Sudden severe shortness of breath, audible stridor, or inability to speak in complete sentences without gasping.
+              </p>
+</div>
+</div>
+<!-- Flag 2 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container">
+<div class="w-6 h-6 rounded bg-error-container/40 text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Cardiothoracic Distress</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Persistent retrosternal chest pain, squeezing pressure, or radiating pain to the shoulder, jaw, or left arm.
+              </p>
+</div>
+</div>
+<!-- Flag 3 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container">
+<div class="w-6 h-6 rounded bg-error-container/40 text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Peripheral Hypoxia (Cyanosis)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Bluish tint observed along the lip margins, tongue, nail beds, or pale ashen skin with cold diaphoresis.
+              </p>
+</div>
+</div>
+<!-- Flag 4 -->
+<div class="flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container">
+<div class="w-6 h-6 rounded bg-error-container/40 text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Uncontrolled Hyperpyrexia</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                High persistent fever exceeding 39.5°C (103°F) unresponsive to standard antipyretics, or altered cognitive orientation.
+              </p>
+</div>
+</div>
+</div>
+<!-- Action Row: Emergency Shortcut & Clinic Locator -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-md">
+<div class="flex items-center gap-space-sm">
+<a class="px-space-md py-space-xs rounded bg-error text-on-error font-headline-md text-body-md font-bold flex items-center justify-center gap-space-xs shadow-lg hover:brightness-110 active:scale-95 transition-all" href="tel:911">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>Emergency Services: 911</span>
+</a>
+<span class="font-body-sm text-body-sm text-outline hidden sm:inline">24/7 National Dispatch</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-md text-body-md flex items-center justify-center gap-space-xs transition-colors shadow-sm" id="findClinicBtn">
+<span class="material-symbols-outlined text-[18px] text-primary">local_hospital</span>
+<span>Find Nearest Urgent Care Facility</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Telemetry Ledger & Model Card Footer Anchor -->
+<div class="rounded-xl bg-surface-container p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">lock</span>
+<span class="font-code-md text-code-md text-on-surface-variant">ENCLAVE: ZERO-KNOWLEDGE RECORD #ZK-98012-US</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-outline">
+<span>MODEL TIMESTAMP: 2024-11-04T18:32:09Z</span>
+<span>•</span>
+<span>LATENCY: 42ms</span>
+<span>•</span>
+<span>ENGINE: VIT-BAYES-ENSEMBLE</span>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script for Micro-interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Urgent Care Facility Mock Handler
+      const findClinicBtn = document.getElementById('findClinicBtn');
+      if (findClinicBtn) {
+        findClinicBtn.addEventListener('click', () => {
+          const originalText = findClinicBtn.innerHTML;
+          findClinicBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px] animate-spin text-primary">sync</span>
+            <span>Triangulating Facilities...</span>
+          `;
+          setTimeout(() => {
+            alert('Geolocation search active: 3 Urgent Care centers located within 4.2 miles. Transmitting coordinates to browser maps.');
+            findClinicBtn.innerHTML = originalText;
+          }, 800);
+        });
+      }
+
+      // Export Dossier Mock Handler
+      const exportBtn = document.getElementById('exportTeleReport');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          const prev = exportBtn.innerHTML;
+          exportBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+            <span>Dossier Prepared</span>
+          `;
+          setTimeout(() => {
+            exportBtn.innerHTML = prev;
+          }, 2000);
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-space-2xl mt-space-3xl"><div class="w-full px-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg border-b border-outline-variant/10"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-bold">VITALIS</span><span class="font-code-md text-code-md text-outline">| CLINICAL PREDICTION SUITE</span></div><div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="ml-architecture" href="#">Precision Calibration</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Algorithmic Governance</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Privacy &amp; HIPAA Enclave</a></div></div><div class="pt-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">VITALIS is an educational and analytical health awareness platform powered by probabilistic machine learning models. It does not provide medical diagnoses or replace licensed clinical judgment. In case of acute symptoms, contact emergency medical care immediately.</p><div class="font-code-md text-code-md text-outline-variant flex-shrink-0">© 2024 VITALIS LABS INC. TELEMETRY ACTIVE.</div></div></div></footer><div class="fixed inset-0 z-50 flex items-center justify-center p-space-md sm:p-space-lg bg-surface-container-lowest/80 backdrop-blur-xl overflow-y-auto" id="shap-modal-overlay"><div class="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-xl bg-surface-container-low border border-outline-variant/40 shadow-2xl overflow-hidden my-auto"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg bg-surface-container border-b border-outline-variant/30 flex-shrink-0"><div class="flex flex-col gap-space-2xs"><div class="flex items-center gap-space-xs"><span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">VIT-ML-v4.2 • EXPLAINABILITY ENGINE</span><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span></div><h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">SHAP Feature Attribution &amp; Shapley Force Decomposition</h2><div class="flex flex-wrap items-center gap-space-xs font-code-md text-code-md mt-0.5"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px]">KernelExplainer // 5,000 MC Iterations</span><span class="text-outline">•</span><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[11px]">Baseline E[f(x)] = 0.180</span><span class="text-outline">•</span><span class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary font-semibold text-[11px]">Current Output f(x) = 0.684</span></div></div><button aria-label="Close SHAP Studio" class="p-space-2xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex-shrink-0" onclick="document.getElementById('shap-modal-overlay').classList.add('hidden')"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="overflow-y-auto p-space-lg flex flex-col gap-space-xl"><div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container border border-outline-variant/30"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">waterfall_chart</span><span class="font-headline-md text-body-lg text-on-surface font-semibold">Shapley Force Vector Decomposition</span></div><div class="flex items-center gap-space-md font-label-caps text-label-caps"><span class="flex items-center gap-1 text-primary"><span class="w-2 h-2 rounded-full bg-primary"></span> Positive Driving Force (↑)</span><span class="flex items-center gap-1 text-error"><span class="w-2 h-2 rounded-full bg-error"></span> Suppressor Force (↓)</span></div></div><div class="relative py-space-xs"><div class="flex justify-between items-end mb-1 font-code-md text-[11px]"><span class="text-outline">Base Value: <strong class="text-on-surface">0.180</strong></span><span class="text-primary font-bold">Δ = +0.504 NET SHAP ACCUMULATION</span><span class="text-primary font-bold">Predicted: <strong class="text-primary">0.684</strong></span></div><div class="relative h-10 w-full rounded-lg bg-surface-container-highest flex overflow-hidden border border-outline-variant/30"><div class="h-full bg-primary flex items-center justify-center font-code-md text-[10px] text-on-primary font-bold px-1 overflow-hidden" style="width: 42%;" title="Persistent Dry Cough (+0.42)">+0.42 Cough</div><div class="h-full bg-primary-container flex items-center justify-center font-code-md text-[10px] text-on-primary-container font-bold px-1 overflow-hidden" style="width: 28%;" title="Low-Grade Fever (+0.28)">+0.28 Fever</div><div class="h-full bg-primary/70 flex items-center justify-center font-code-md text-[10px] text-on-primary font-bold px-1 overflow-hidden" style="width: 19%;" title="Fatigue (+0.19)">+0.19 Fatigue</div><div class="h-full bg-error flex items-center justify-center font-code-md text-[10px] text-on-error font-bold px-1 overflow-hidden" style="width: 31%;" title="No Sputum (-0.31)">-0.31 No Sputum</div><div class="h-full bg-error-container flex items-center justify-center font-code-md text-[10px] text-on-error-container font-bold px-1 overflow-hidden" style="width: 8%;" title="SpO2 Normal (-0.08)">-0.08 SpO2</div></div><div class="flex justify-between text-outline font-code-md text-[10px] mt-1"><span>f(x) Origin: 0.18</span><span>Median Population Centroid: 0.35</span><span>Target Probability: 0.684</span></div></div></div><div class="flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">table_chart</span><h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Feature Attribution Ledger &amp; Counterfactual Sensitivities</h3></div><span class="font-label-caps text-label-caps text-outline">ADDITIVE CONTRIBUTION MATRIX</span></div><div class="overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-low"><table class="w-full text-left border-collapse min-w-[620px]"><thead><tr class="bg-surface-container font-label-caps text-label-caps text-outline uppercase border-b border-outline-variant/30"><th class="p-space-sm">Clinical Vector / Input Feature</th><th class="p-space-sm">Pop. Baseline</th><th class="p-space-sm">Shapley (φᵢ)</th><th class="p-space-sm">Share of Δ</th><th class="p-space-sm text-right">Counterfactual Toggle</th></tr></thead><tbody class="font-body-sm text-body-sm divide-y divide-outline-variant/20"><tr class="hover:bg-surface-container transition-colors"><td class="p-space-sm"><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface font-medium">Persistent Dry Cough (≥4 Days)</span><span class="text-outline text-[11px] font-code-md">VECTOR: RESP_COUGH_FREQ=3</span></div></td><td class="p-space-sm font-code-md text-outline">14.2%</td><td class="p-space-sm"><span class="px-space-xs py-0.5 rounded bg-primary/20 text-primary font-code-md font-bold text-[12px]">+0.420</span></td><td class="p-space-sm font-code-md text-primary">41.6%</td><td class="p-space-sm text-right"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px] font-code-md cursor-pointer hover:text-primary transition-colors border border-outline-variant/30">Simulate Inactive</span></td></tr><tr class="hover:bg-surface-container transition-colors"><td class="p-space-sm"><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface font-medium">Low-Grade Pyrexia (38.2°C)</span><span class="text-outline text-[11px] font-code-md">VECTOR: TEMP_CELSIUS=38.2</span></div></td><td class="p-space-sm font-code-md text-outline">8.7%</td><td class="p-space-sm"><span class="px-space-xs py-0.5 rounded bg-primary/20 text-primary font-code-md font-bold text-[12px]">+0.280</span></td><td class="p-space-sm font-code-md text-primary">27.7%</td><td class="p-space-sm text-right"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px] font-code-md cursor-pointer hover:text-primary transition-colors border border-outline-variant/30">Simulate Norm (37.0°)</span></td></tr><tr class="hover:bg-surface-container transition-colors"><td class="p-space-sm"><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface font-medium">Absence of Purulent Expectoration</span><span class="text-outline text-[11px] font-code-md">VECTOR: SPUTUM_PURULENCE=0</span></div></td><td class="p-space-sm font-code-md text-outline">72.4%</td><td class="p-space-sm"><span class="px-space-xs py-0.5 rounded bg-error-container/30 text-error font-code-md font-bold text-[12px]">-0.310</span></td><td class="p-space-sm font-code-md text-error">-30.7%</td><td class="p-space-sm text-right"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px] font-code-md cursor-pointer hover:text-error transition-colors border border-outline-variant/30">Flip to Productive</span></td></tr><tr class="hover:bg-surface-container transition-colors"><td class="p-space-sm"><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface font-medium">Daytime Fatigue Index (4/6)</span><span class="text-outline text-[11px] font-code-md">VECTOR: SYSTEMIC_FATIGUE=4</span></div></td><td class="p-space-sm font-code-md text-outline">22.1%</td><td class="p-space-sm"><span class="px-space-xs py-0.5 rounded bg-primary/20 text-primary font-code-md font-bold text-[12px]">+0.190</span></td><td class="p-space-sm font-code-md text-primary">18.8%</td><td class="p-space-sm text-right"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px] font-code-md cursor-pointer hover:text-primary transition-colors border border-outline-variant/30">Simulate Zero</span></td></tr><tr class="hover:bg-surface-container transition-colors"><td class="p-space-sm"><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface font-medium">Resting SpO2 (98% Normal)</span><span class="text-outline text-[11px] font-code-md">VECTOR: SPO2_PCT=98</span></div></td><td class="p-space-sm font-code-md text-outline">91.8%</td><td class="p-space-sm"><span class="px-space-xs py-0.5 rounded bg-error-container/30 text-error font-code-md font-bold text-[12px]">-0.050</span></td><td class="p-space-sm font-code-md text-error">-5.0%</td><td class="p-space-sm text-right"><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline text-[11px] font-code-md cursor-pointer hover:text-error transition-colors border border-outline-variant/30">Simulate Hypoxia (91%)</span></td></tr></tbody></table></div></div><div class="flex flex-col gap-space-xs p-space-md rounded-xl bg-surface-container border border-outline-variant/30"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-outline text-[18px]">menu_book</span><span class="font-label-caps text-label-caps text-on-surface font-semibold">Academic &amp; Clinical Methodology Notes</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">The VIT-SHAP decomposition relies on cooperative game theory and classical Lloyd Shapley values. The sum of all attribution weights is mathematically guaranteed to equal the exact differential between the expected base model output E[f(x)] and the current individual prediction f(x): <span class="font-code-md text-primary font-semibold">f(x) = E[f(x)] + Σ φᵢ</span>. This guarantees local accuracy, missingness invariance, and consistency across all correlated health indicators.</p></div></div><div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md p-space-md bg-surface-container border-t border-outline-variant/30 flex-shrink-0"><div class="flex items-center gap-space-sm"><button class="px-space-md py-space-xs rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-md text-body-sm font-medium flex items-center gap-space-xs transition-colors border border-outline-variant/30"><span class="material-symbols-outlined text-[16px] text-primary">picture_as_pdf</span><span>Export SHAP Breakdown PDF</span></button><button class="px-space-md py-space-xs rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-md text-body-sm font-medium flex items-center gap-space-xs transition-colors border border-outline-variant/30"><span class="material-symbols-outlined text-[16px] text-secondary">model_training</span><span>Run Counterfactual Simulation</span></button></div><button class="px-space-lg py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-sm font-semibold hover:bg-primary transition-all shadow-md" onclick="document.getElementById('shap-modal-overlay').classList.add('hidden')">Close Studio</button></div></div></div></body></html>
