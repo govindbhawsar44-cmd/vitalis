@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_15 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_15" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_15');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // VITALIS 3D Organ Visualization & Depth Scroll Engine
+const container = document.getElementById('threejs-container-ANIMATION_1') || document.body;
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x0a0e13, 0.035);
+
+const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
+camera.position.set(0, 0, 9);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Clinical Lighting System
+const ambientLight = new THREE.AmbientLight(0x0a2233, 3.0);
+scene.add(ambientLight);
+
+const cyanLight = new THREE.DirectionalLight(0x0ae2c8, 3.5);
+cyanLight.position.set(6, 12, 8);
+scene.add(cyanLight);
+
+const blueLight = new THREE.DirectionalLight(0x3b82f6, 3.0);
+blueLight.position.set(-8, -6, 6);
+scene.add(blueLight);
+
+const pulseLight = new THREE.PointLight(0x00f2fe, 2.0, 15);
+pulseLight.position.set(0, 0, 4);
+scene.add(pulseLight);
+
+// Group to hold organs with responsive lateral placement
+const organsGroup = new THREE.Group();
+scene.add(organsGroup);
+
+// Materials for Holographic / Scientific Clinical Organs
+const glassWireMat = new THREE.MeshPhongMaterial({
+  color: 0x05202e,
+  emissive: 0x0ae2c8,
+  emissiveIntensity: 0.35,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.75
+});
+
+const glowingCoreMat = new THREE.MeshBasicMaterial({
+  color: 0x00f2fe,
+  wireframe: false,
+  transparent: true,
+  opacity: 0.85
+});
+
+const pulmonaryMat = new THREE.MeshPhongMaterial({
+  color: 0x092e3d,
+  emissive: 0x00f2fe,
+  emissiveIntensity: 0.45,
+  shininess: 80,
+  transparent: true,
+  opacity: 0.75
+});
+
+const cardiacMat = new THREE.MeshPhongMaterial({
+  color: 0x1a1236,
+  emissive: 0x38ef7d,
+  emissiveIntensity: 0.4,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.7
+});
+
+// --- ORGAN 1: Cranial / Neural Cortex (Top Right Side) ---
+const brainGroup = new THREE.Group();
+brainGroup.position.set(4.6, 2.5, 0.5);
+
+// Left & Right Hemispheres
+const leftHemisphereGeo = new THREE.SphereGeometry(0.75, 20, 20);
+leftHemisphereGeo.scale(0.85, 1.1, 1.35);
+const leftHemi = new THREE.Mesh(leftHemisphereGeo, glassWireMat);
+leftHemi.position.set(-0.35, 0, 0);
+brainGroup.add(leftHemi);
+
+const rightHemisphereGeo = new THREE.SphereGeometry(0.75, 20, 20);
+rightHemisphereGeo.scale(0.85, 1.1, 1.35);
+const rightHemi = new THREE.Mesh(rightHemisphereGeo, glassWireMat);
+rightHemi.position.set(0.35, 0, 0);
+brainGroup.add(rightHemi);
+
+// Synaptic Core Pulsing Sphere
+const brainCoreGeo = new THREE.IcosahedronGeometry(0.35, 2);
+const brainCore = new THREE.Mesh(brainCoreGeo, glowingCoreMat);
+brainGroup.add(brainCore);
+
+// Synaptic Neural Halo Ring
+const brainRingGeo = new THREE.TorusGeometry(1.4, 0.015, 8, 48);
+const brainRing = new THREE.Mesh(brainRingGeo, new THREE.MeshBasicMaterial({ color: 0x0ae2c8, transparent: true, opacity: 0.45 }));
+brainRing.rotation.x = Math.PI / 2.5;
+brainGroup.add(brainRing);
+
+organsGroup.add(brainGroup);
+
+
+// --- ORGAN 2: Pulmonary Lungs & Bronchial Tree (Mid-Left Side) ---
+const lungsGroup = new THREE.Group();
+lungsGroup.position.set(-4.7, 0.2, 0.2);
+
+// Trachea & Main Bronchus
+const tracheaGeo = new THREE.CylinderGeometry(0.1, 0.08, 0.8, 12);
+const trachea = new THREE.Mesh(tracheaGeo, pulmonaryMat);
+trachea.position.set(0, 0.9, 0);
+lungsGroup.add(trachea);
+
+// Left Lung Lobe
+const leftLobeGeo = new THREE.ConeGeometry(0.68, 1.6, 16);
+leftLobeGeo.scale(0.9, 1.0, 0.65);
+const leftLobe = new THREE.Mesh(leftLobeGeo, glassWireMat);
+leftLobe.position.set(-0.6, 0.1, 0);
+leftLobe.rotation.z = -0.18;
+lungsGroup.add(leftLobe);
+
+// Right Lung Lobe (3 segments visually mapped)
+const rightLobeGeo = new THREE.ConeGeometry(0.72, 1.65, 16);
+rightLobeGeo.scale(0.9, 1.0, 0.65);
+const rightLobe = new THREE.Mesh(rightLobeGeo, glassWireMat);
+rightLobe.position.set(0.6, 0.1, 0);
+rightLobe.rotation.z = 0.18;
+lungsGroup.add(rightLobe);
+
+// Alveoli Nodes / Floating Pulmonary Bronchioles
+const alveoliGroup = new THREE.Group();
+for (let i = 0; i < 18; i++) {
+  const alvGeo = new THREE.SphereGeometry(0.04, 8, 8);
+  const alvMat = new THREE.MeshBasicMaterial({ color: 0x00f2fe });
+  const alv = new THREE.Mesh(alvGeo, alvMat);
+  const side = i % 2 === 0 ? -1 : 1;
+  alv.position.set(side * (0.3 + Math.random() * 0.5), -0.5 + Math.random() * 1.0, (Math.random() - 0.5) * 0.4);
+  alveoliGroup.add(alv);
+}
+lungsGroup.add(alveoliGroup);
+
+// Pulmonary Scanner Target Ring
+const lungScanRing = new THREE.Mesh(
+  new THREE.RingGeometry(1.3, 1.34, 36),
+  new THREE.MeshBasicMaterial({ color: 0x00f2fe, side: THREE.DoubleSide, transparent: true, opacity: 0.35 })
+);
+lungScanRing.rotation.y = 0.3;
+lungsGroup.add(lungScanRing);
+
+organsGroup.add(lungsGroup);
+
+
+// --- ORGAN 3: Cardiopulmonary / Dynamic Cardiac Ventricle (Lower Right Side) ---
+const heartGroup = new THREE.Group();
+heartGroup.position.set(4.8, -2.4, 0.8);
+
+// Anatomic Ventricles silhouette
+const ventricleGeo = new THREE.DodecahedronGeometry(0.7, 1);
+ventricleGeo.scale(0.85, 1.15, 0.8);
+const ventricleMesh = new THREE.Mesh(ventricleGeo, cardiacMat);
+heartGroup.add(ventricleMesh);
+
+// Aorta Arch
+const aortaGeo = new THREE.TorusGeometry(0.35, 0.1, 10, 24, Math.PI * 1.1);
+const aortaMesh = new THREE.Mesh(aortaGeo, pulmonaryMat);
+aortaMesh.position.set(0.05, 0.7, 0);
+aortaMesh.rotation.z = Math.PI / 6;
+heartGroup.add(aortaMesh);
+
+// Cardiac Rhythm Beacon Pulse Sphere
+const heartNodeGeo = new THREE.SphereGeometry(0.18, 12, 12);
+const heartNode = new THREE.Mesh(heartNodeGeo, new THREE.MeshBasicMaterial({ color: 0x38ef7d }));
+heartGroup.add(heartNode);
+
+// Cardiac Flow Torus
+const heartWaveRing = new THREE.Mesh(
+  new THREE.TorusGeometry(1.2, 0.015, 8, 48),
+  new THREE.MeshBasicMaterial({ color: 0x38ef7d, transparent: true, opacity: 0.4 })
+);
+heartWaveRing.rotation.x = Math.PI / 3;
+heartGroup.add(heartWaveRing);
+
+organsGroup.add(heartGroup);
+
+
+// --- ORGAN 4: Hepatic / Enteric Double-Helix Network (Deep Lower Left) ---
+const entericGroup = new THREE.Group();
+entericGroup.position.set(-4.6, -4.5, 0.3);
+
+const helixGeo = new THREE.TorusKnotGeometry(0.65, 0.18, 64, 12, 2, 3);
+const entericMesh = new THREE.Mesh(helixGeo, glassWireMat);
+entericGroup.add(entericMesh);
+
+const entericRing = new THREE.Mesh(
+  new THREE.RingGeometry(1.2, 1.25, 32),
+  new THREE.MeshBasicMaterial({ color: 0x0ae2c8, side: THREE.DoubleSide, transparent: true, opacity: 0.3 })
+);
+entericGroup.add(entericRing);
+
+organsGroup.add(entericGroup);
+
+
+// --- Ambient Biomarker Floating Particles & Scientific Grid Horizon ---
+const particleCount = 220;
+const pGeom = new THREE.BufferGeometry();
+const pCoords = new Float32Array(particleCount * 3);
+for (let p = 0; p < particleCount * 3; p += 3) {
+  pCoords[p] = (Math.random() - 0.5) * 14.0;
+  pCoords[p + 1] = (Math.random() - 0.5) * 14.0;
+  pCoords[p + 2] = (Math.random() - 0.5) * 8.0;
+}
+pGeom.setAttribute('position', new THREE.BufferAttribute(pCoords, 3));
+const pMat = new THREE.PointsMaterial({
+  color: 0x0ae2c8,
+  size: 0.04,
+  transparent: true,
+  opacity: 0.4
+});
+const bioParticles = new THREE.Points(pGeom, pMat);
+scene.add(bioParticles);
+
+
+// --- Interactive Scroll & Cursor Depth Control ---
+let scrollY = 0;
+let targetScrollY = 0;
+let mouseX = 0;
+let mouseY = 0;
+let targetMouseX = 0;
+let targetMouseY = 0;
+
+window.addEventListener('scroll', () => {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight || 1;
+  targetScrollY = (window.scrollY / maxScroll);
+}, { passive: true });
+
+window.addEventListener('mousemove', (e) => {
+  targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+  targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+// Render & Animation Loop
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const elapsed = clock.getElapsedTime();
+
+  // Smooth scroll interpolation
+  scrollY += (targetScrollY - scrollY) * 0.08;
+  mouseX += (targetMouseX - mouseX) * 0.06;
+  mouseY += (targetMouseY - mouseY) * 0.06;
+
+  // Parallax camera navigation through 3D depth based on scroll
+  // As user scrolls down, camera descends and subtly rotates through organ fields
+  camera.position.y = 1.0 - scrollY * 6.5;
+  camera.position.z = 9.0 + Math.sin(scrollY * Math.PI) * 1.8;
+  camera.position.x = mouseX * 0.6;
+  camera.rotation.y = -mouseX * 0.08;
+  camera.rotation.x = -mouseY * 0.05 - (scrollY * 0.15);
+
+  // Subtle natural floating & organ self-rotation
+  brainGroup.rotation.y = elapsed * 0.25 + mouseX * 0.2;
+  brainGroup.rotation.x = Math.sin(elapsed * 0.8) * 0.1;
+  const brainPulse = 1.0 + Math.sin(elapsed * 3.0) * 0.12;
+  brainCore.scale.set(brainPulse, brainPulse, brainPulse);
+  brainRing.rotation.z = elapsed * 0.35;
+
+  // Lungs breathing simulation
+  const breath = 1.0 + Math.sin(elapsed * 1.8) * 0.07;
+  leftLobe.scale.set(0.9 * breath, 1.0 * breath, 0.65 * breath);
+  rightLobe.scale.set(0.9 * breath, 1.0 * breath, 0.65 * breath);
+  lungsGroup.rotation.y = -elapsed * 0.2 - mouseX * 0.15;
+  lungScanRing.rotation.z = -elapsed * 0.25;
+
+  // Heart systolic rhythm pulse
+  const heartBeat = 1.0 + Math.pow(Math.sin(elapsed * 4.5), 6.0) * 0.25;
+  heartGroup.scale.set(heartBeat, heartBeat, heartBeat);
+  heartGroup.rotation.y = elapsed * 0.35;
+  heartWaveRing.rotation.z = elapsed * 0.5;
+
+  // Enteric knot twist
+  entericMesh.rotation.x = elapsed * 0.2;
+  entericMesh.rotation.y = elapsed * 0.25;
+  entericRing.rotation.z = -elapsed * 0.3;
+
+  // Ambient particles slow drift
+  bioParticles.rotation.y = elapsed * 0.02;
+  bioParticles.rotation.x = elapsed * 0.01;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize handling
+window.addEventListener('resize', () => {
+  const nw = container.clientWidth || window.innerWidth;
+  const nh = container.clientHeight || window.innerHeight;
+  camera.aspect = nw / nh;
+  camera.updateProjectionMatrix();
+  renderer.setSize(nw, nh);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_15 -->
+</body>
+</html>
