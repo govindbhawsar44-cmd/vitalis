@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+@keyframes ecg-pulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.7); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+.animate-ecg { animation: ecg-pulse 1.4s ease-in-out infinite; }
+@keyframes hud-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.hud-card { animation: hud-float 5s ease-in-out infinite; }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#ffb95f","outline-variant":"#3b4a46","primary-fixed-dim":"#00dfc5","surface-container-lowest":"#0a0e13","primary":"#4cffe4","tertiary-fixed":"#ffddb8","on-background":"#e0e2ea","surface-bright":"#36393f","surface-tint":"#00dfc5","on-tertiary":"#472a00","secondary":"#b4c5ff","surface-container":"#1c2025","on-secondary":"#002a78","background":"#101419","outline":"#849490","secondary-container":"#0053db","on-tertiary-fixed":"#2a1700","surface-dim":"#101419","on-primary-fixed-variant":"#005046","primary-container":"#0ae2c8","on-primary-fixed":"#00201b","secondary-fixed":"#dbe1ff","on-secondary-fixed-variant":"#003ea8","on-secondary-container":"#cdd7ff","on-primary":"#003730","surface-container-low":"#181c21","on-surface-variant":"#bacac5","inverse-on-surface":"#2d3136","tertiary-container":"#ffbd6a","tertiary":"#ffe1c1","inverse-surface":"#e0e2ea","surface":"#101419","on-error":"#690005","surface-container-highest":"#31353b","surface-variant":"#31353b","error-container":"#93000a","on-tertiary-fixed-variant":"#653e00","on-error-container":"#ffdad6","inverse-primary":"#006b5e","on-tertiary-container":"#784b00","error":"#ffb4ab","on-secondary-fixed":"#00174b","secondary-fixed-dim":"#b4c5ff","surface-container-high":"#262a30","on-primary-container":"#006054","on-surface":"#e0e2ea","primary-fixed":"#47fce1"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.75rem","space-xl":"2rem","space-xs":"0.5rem","margin-desktop":"3rem","space-3xl":"4rem","margin-mobile":"1rem","space-2xs":"0.25rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-desktop":"1.5rem","space-md":"1rem","space-4xl":"6rem","space-2xl":"3rem","gutter-mobile":"1rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"code-md":["JetBrains Mono"],"body-md":["Inter"],"headline-2xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"code-lg":["JetBrains Mono"],"label-sm":["Inter"],"label-caps":["JetBrains Mono"],"headline-2xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-2xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-2xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden">
+<!-- 3D Persistent Anatomical Organ Parallax Scene -->
+<!-- STITCH_THREEJS_START:ANIMATION_15 class="fixed inset-0 w-full h-full pointer-events-none z-0 bg-transparent" -->
+<div class="fixed inset-0 w-full h-full pointer-events-none z-0 bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_15" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_15');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // VITALIS 3D Organ Visualization & Depth Scroll Engine
+const container = document.getElementById('threejs-container-ANIMATION_1') || document.body;
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x0a0e13, 0.035);
+
+const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
+camera.position.set(0, 0, 9);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Clinical Lighting System
+const ambientLight = new THREE.AmbientLight(0x0a2233, 3.0);
+scene.add(ambientLight);
+
+const cyanLight = new THREE.DirectionalLight(0x0ae2c8, 3.5);
+cyanLight.position.set(6, 12, 8);
+scene.add(cyanLight);
+
+const blueLight = new THREE.DirectionalLight(0x3b82f6, 3.0);
+blueLight.position.set(-8, -6, 6);
+scene.add(blueLight);
+
+const pulseLight = new THREE.PointLight(0x00f2fe, 2.0, 15);
+pulseLight.position.set(0, 0, 4);
+scene.add(pulseLight);
+
+// Group to hold organs with responsive lateral placement
+const organsGroup = new THREE.Group();
+scene.add(organsGroup);
+
+// Materials for Holographic / Scientific Clinical Organs
+const glassWireMat = new THREE.MeshPhongMaterial({
+  color: 0x05202e,
+  emissive: 0x0ae2c8,
+  emissiveIntensity: 0.35,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.75
+});
+
+const glowingCoreMat = new THREE.MeshBasicMaterial({
+  color: 0x00f2fe,
+  wireframe: false,
+  transparent: true,
+  opacity: 0.85
+});
+
+const pulmonaryMat = new THREE.MeshPhongMaterial({
+  color: 0x092e3d,
+  emissive: 0x00f2fe,
+  emissiveIntensity: 0.45,
+  shininess: 80,
+  transparent: true,
+  opacity: 0.75
+});
+
+const cardiacMat = new THREE.MeshPhongMaterial({
+  color: 0x1a1236,
+  emissive: 0x38ef7d,
+  emissiveIntensity: 0.4,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.7
+});
+
+// --- ORGAN 1: Cranial / Neural Cortex (Top Right Side) ---
+const brainGroup = new THREE.Group();
+brainGroup.position.set(4.6, 2.5, 0.5);
+
+// Left & Right Hemispheres
+const leftHemisphereGeo = new THREE.SphereGeometry(0.75, 20, 20);
+leftHemisphereGeo.scale(0.85, 1.1, 1.35);
+const leftHemi = new THREE.Mesh(leftHemisphereGeo, glassWireMat);
+leftHemi.position.set(-0.35, 0, 0);
+brainGroup.add(leftHemi);
+
+const rightHemisphereGeo = new THREE.SphereGeometry(0.75, 20, 20);
+rightHemisphereGeo.scale(0.85, 1.1, 1.35);
+const rightHemi = new THREE.Mesh(rightHemisphereGeo, glassWireMat);
+rightHemi.position.set(0.35, 0, 0);
+brainGroup.add(rightHemi);
+
+// Synaptic Core Pulsing Sphere
+const brainCoreGeo = new THREE.IcosahedronGeometry(0.35, 2);
+const brainCore = new THREE.Mesh(brainCoreGeo, glowingCoreMat);
+brainGroup.add(brainCore);
+
+// Synaptic Neural Halo Ring
+const brainRingGeo = new THREE.TorusGeometry(1.4, 0.015, 8, 48);
+const brainRing = new THREE.Mesh(brainRingGeo, new THREE.MeshBasicMaterial({ color: 0x0ae2c8, transparent: true, opacity: 0.45 }));
+brainRing.rotation.x = Math.PI / 2.5;
+brainGroup.add(brainRing);
+
+organsGroup.add(brainGroup);
+
+
+// --- ORGAN 2: Pulmonary Lungs & Bronchial Tree (Mid-Left Side) ---
+const lungsGroup = new THREE.Group();
+lungsGroup.position.set(-4.7, 0.2, 0.2);
+
+// Trachea & Main Bronchus
+const tracheaGeo = new THREE.CylinderGeometry(0.1, 0.08, 0.8, 12);
+const trachea = new THREE.Mesh(tracheaGeo, pulmonaryMat);
+trachea.position.set(0, 0.9, 0);
+lungsGroup.add(trachea);
+
+// Left Lung Lobe
+const leftLobeGeo = new THREE.ConeGeometry(0.68, 1.6, 16);
+leftLobeGeo.scale(0.9, 1.0, 0.65);
+const leftLobe = new THREE.Mesh(leftLobeGeo, glassWireMat);
+leftLobe.position.set(-0.6, 0.1, 0);
+leftLobe.rotation.z = -0.18;
+lungsGroup.add(leftLobe);
+
+// Right Lung Lobe (3 segments visually mapped)
+const rightLobeGeo = new THREE.ConeGeometry(0.72, 1.65, 16);
+rightLobeGeo.scale(0.9, 1.0, 0.65);
+const rightLobe = new THREE.Mesh(rightLobeGeo, glassWireMat);
+rightLobe.position.set(0.6, 0.1, 0);
+rightLobe.rotation.z = 0.18;
+lungsGroup.add(rightLobe);
+
+// Alveoli Nodes / Floating Pulmonary Bronchioles
+const alveoliGroup = new THREE.Group();
+for (let i = 0; i < 18; i++) {
+  const alvGeo = new THREE.SphereGeometry(0.04, 8, 8);
+  const alvMat = new THREE.MeshBasicMaterial({ color: 0x00f2fe });
+  const alv = new THREE.Mesh(alvGeo, alvMat);
+  const side = i % 2 === 0 ? -1 : 1;
+  alv.position.set(side * (0.3 + Math.random() * 0.5), -0.5 + Math.random() * 1.0, (Math.random() - 0.5) * 0.4);
+  alveoliGroup.add(alv);
+}
+lungsGroup.add(alveoliGroup);
+
+// Pulmonary Scanner Target Ring
+const lungScanRing = new THREE.Mesh(
+  new THREE.RingGeometry(1.3, 1.34, 36),
+  new THREE.MeshBasicMaterial({ color: 0x00f2fe, side: THREE.DoubleSide, transparent: true, opacity: 0.35 })
+);
+lungScanRing.rotation.y = 0.3;
+lungsGroup.add(lungScanRing);
+
+organsGroup.add(lungsGroup);
+
+
+// --- ORGAN 3: Cardiopulmonary / Dynamic Cardiac Ventricle (Lower Right Side) ---
+const heartGroup = new THREE.Group();
+heartGroup.position.set(4.8, -2.4, 0.8);
+
+// Anatomic Ventricles silhouette
+const ventricleGeo = new THREE.DodecahedronGeometry(0.7, 1);
+ventricleGeo.scale(0.85, 1.15, 0.8);
+const ventricleMesh = new THREE.Mesh(ventricleGeo, cardiacMat);
+heartGroup.add(ventricleMesh);
+
+// Aorta Arch
+const aortaGeo = new THREE.TorusGeometry(0.35, 0.1, 10, 24, Math.PI * 1.1);
+const aortaMesh = new THREE.Mesh(aortaGeo, pulmonaryMat);
+aortaMesh.position.set(0.05, 0.7, 0);
+aortaMesh.rotation.z = Math.PI / 6;
+heartGroup.add(aortaMesh);
+
+// Cardiac Rhythm Beacon Pulse Sphere
+const heartNodeGeo = new THREE.SphereGeometry(0.18, 12, 12);
+const heartNode = new THREE.Mesh(heartNodeGeo, new THREE.MeshBasicMaterial({ color: 0x38ef7d }));
+heartGroup.add(heartNode);
+
+// Cardiac Flow Torus
+const heartWaveRing = new THREE.Mesh(
+  new THREE.TorusGeometry(1.2, 0.015, 8, 48),
+  new THREE.MeshBasicMaterial({ color: 0x38ef7d, transparent: true, opacity: 0.4 })
+);
+heartWaveRing.rotation.x = Math.PI / 3;
+heartGroup.add(heartWaveRing);
+
+organsGroup.add(heartGroup);
+
+
+// --- ORGAN 4: Hepatic / Enteric Double-Helix Network (Deep Lower Left) ---
+const entericGroup = new THREE.Group();
+entericGroup.position.set(-4.6, -4.5, 0.3);
+
+const helixGeo = new THREE.TorusKnotGeometry(0.65, 0.18, 64, 12, 2, 3);
+const entericMesh = new THREE.Mesh(helixGeo, glassWireMat);
+entericGroup.add(entericMesh);
+
+const entericRing = new THREE.Mesh(
+  new THREE.RingGeometry(1.2, 1.25, 32),
+  new THREE.MeshBasicMaterial({ color: 0x0ae2c8, side: THREE.DoubleSide, transparent: true, opacity: 0.3 })
+);
+entericGroup.add(entericRing);
+
+organsGroup.add(entericGroup);
+
+
+// --- Ambient Biomarker Floating Particles & Scientific Grid Horizon ---
+const particleCount = 220;
+const pGeom = new THREE.BufferGeometry();
+const pCoords = new Float32Array(particleCount * 3);
+for (let p = 0; p < particleCount * 3; p += 3) {
+  pCoords[p] = (Math.random() - 0.5) * 14.0;
+  pCoords[p + 1] = (Math.random() - 0.5) * 14.0;
+  pCoords[p + 2] = (Math.random() - 0.5) * 8.0;
+}
+pGeom.setAttribute('position', new THREE.BufferAttribute(pCoords, 3));
+const pMat = new THREE.PointsMaterial({
+  color: 0x0ae2c8,
+  size: 0.04,
+  transparent: true,
+  opacity: 0.4
+});
+const bioParticles = new THREE.Points(pGeom, pMat);
+scene.add(bioParticles);
+
+
+// --- Interactive Scroll & Cursor Depth Control ---
+let scrollY = 0;
+let targetScrollY = 0;
+let mouseX = 0;
+let mouseY = 0;
+let targetMouseX = 0;
+let targetMouseY = 0;
+
+window.addEventListener('scroll', () => {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight || 1;
+  targetScrollY = (window.scrollY / maxScroll);
+}, { passive: true });
+
+window.addEventListener('mousemove', (e) => {
+  targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+  targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+// Render & Animation Loop
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const elapsed = clock.getElapsedTime();
+
+  // Smooth scroll interpolation
+  scrollY += (targetScrollY - scrollY) * 0.08;
+  mouseX += (targetMouseX - mouseX) * 0.06;
+  mouseY += (targetMouseY - mouseY) * 0.06;
+
+  // Parallax camera navigation through 3D depth based on scroll
+  // As user scrolls down, camera descends and subtly rotates through organ fields
+  camera.position.y = 1.0 - scrollY * 6.5;
+  camera.position.z = 9.0 + Math.sin(scrollY * Math.PI) * 1.8;
+  camera.position.x = mouseX * 0.6;
+  camera.rotation.y = -mouseX * 0.08;
+  camera.rotation.x = -mouseY * 0.05 - (scrollY * 0.15);
+
+  // Subtle natural floating & organ self-rotation
+  brainGroup.rotation.y = elapsed * 0.25 + mouseX * 0.2;
+  brainGroup.rotation.x = Math.sin(elapsed * 0.8) * 0.1;
+  const brainPulse = 1.0 + Math.sin(elapsed * 3.0) * 0.12;
+  brainCore.scale.set(brainPulse, brainPulse, brainPulse);
+  brainRing.rotation.z = elapsed * 0.35;
+
+  // Lungs breathing simulation
+  const breath = 1.0 + Math.sin(elapsed * 1.8) * 0.07;
+  leftLobe.scale.set(0.9 * breath, 1.0 * breath, 0.65 * breath);
+  rightLobe.scale.set(0.9 * breath, 1.0 * breath, 0.65 * breath);
+  lungsGroup.rotation.y = -elapsed * 0.2 - mouseX * 0.15;
+  lungScanRing.rotation.z = -elapsed * 0.25;
+
+  // Heart systolic rhythm pulse
+  const heartBeat = 1.0 + Math.pow(Math.sin(elapsed * 4.5), 6.0) * 0.25;
+  heartGroup.scale.set(heartBeat, heartBeat, heartBeat);
+  heartGroup.rotation.y = elapsed * 0.35;
+  heartWaveRing.rotation.z = elapsed * 0.5;
+
+  // Enteric knot twist
+  entericMesh.rotation.x = elapsed * 0.2;
+  entericMesh.rotation.y = elapsed * 0.25;
+  entericRing.rotation.z = -elapsed * 0.3;
+
+  // Ambient particles slow drift
+  bioParticles.rotation.y = elapsed * 0.02;
+  bioParticles.rotation.x = elapsed * 0.01;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize handling
+window.addEventListener('resize', () => {
+  const nw = container.clientWidth || window.innerWidth;
+  const nh = container.clientHeight || window.innerHeight;
+  camera.aspect = nw / nh;
+  camera.updateProjectionMatrix();
+  renderer.setSize(nw, nh);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_15 -->
+<!-- Persistent Margin Telemetry Depth Indicator -->
+<div class="fixed top-24 left-6 z-30 pointer-events-none hidden 2xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/80 border border-outline-variant/40 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-code-md text-[11px] text-primary tracking-widest uppercase">Z-AXIS TELEMETRY DEPTH: ACTIVE</span>
+</div>
+<!-- Floating Side Margin HUD Clinical Cards (Aligned to 3D Organs) -->
+<!-- Top Right Organ HUD: Cranial Cortex / Neural Axis -->
+<div class="fixed top-36 right-6 z-20 pointer-events-none hidden xl:flex flex-col gap-1.5 p-space-sm rounded-xl bg-surface-container-lowest/85 border border-primary/30 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-64 hud-card" style="animation-delay: 0s;">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-code-md text-code-md text-primary font-bold tracking-tight">CRANIAL CORTEX</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline">NEURAL AXIS</span>
+</div>
+<div class="flex items-center justify-between text-xs font-code-md text-on-surface-variant pt-0.5">
+<span>EEG SPECTRUM: GAMMA</span>
+<span class="text-primary font-semibold">42.8 Hz</span>
+</div>
+<!-- Mini EEG wave lines -->
+<div class="flex items-end gap-1 h-3.5 w-full pt-1">
+<div class="w-1 bg-primary/40 h-2 rounded-xs animate-ecg" style="animation-delay: 0.1s"></div>
+<div class="w-1 bg-primary/60 h-3 rounded-xs animate-ecg" style="animation-delay: 0.3s"></div>
+<div class="w-1 bg-primary h-full rounded-xs animate-ecg" style="animation-delay: 0.5s"></div>
+<div class="w-1 bg-primary/70 h-2.5 rounded-xs animate-ecg" style="animation-delay: 0.2s"></div>
+<div class="w-1 bg-primary/50 h-1.5 rounded-xs animate-ecg" style="animation-delay: 0.4s"></div>
+<div class="w-1 bg-primary/80 h-3 rounded-xs animate-ecg" style="animation-delay: 0.6s"></div>
+<div class="flex-1 text-right font-label-sm text-[10px] text-outline">SYNAPSE ACTIVE</div>
+</div>
+</div>
+<!-- Mid Left Organ HUD: Pulmonary Lobes / Respiratory -->
+<div class="fixed top-[48%] left-6 -translate-y-1/2 z-20 pointer-events-none hidden xl:flex flex-col gap-1.5 p-space-sm rounded-xl bg-surface-container-lowest/85 border border-secondary/30 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-72 hud-card" style="animation-delay: 1.2s;">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-md text-code-md text-secondary font-bold tracking-tight">PULMONARY LOBES</span>
+</div>
+<span class="font-code-md text-[11px] text-secondary font-semibold">[98.4%]</span>
+</div>
+<div class="flex justify-between font-label-sm text-xs text-on-surface-variant">
+<span>RESPIRATORY EFFICIENCY</span>
+<span class="text-secondary font-code-md font-medium">SpO2 99%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden mt-0.5">
+<div class="h-full bg-gradient-to-r from-secondary to-primary w-[98.4%] rounded-full animate-pulse"></div>
+</div>
+<div class="flex items-center justify-between font-code-md text-[10px] text-outline pt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-secondary">air</span> TIDAL VOL: 520mL</span>
+<span>BREATH CYCLE: REG</span>
+</div>
+</div>
+<!-- Lower Right Organ HUD: Cardiac Myocardium -->
+<div class="fixed bottom-28 right-6 z-20 pointer-events-none hidden xl:flex flex-col gap-1.5 p-space-sm rounded-xl bg-surface-container-lowest/85 border border-tertiary-fixed-dim/30 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] w-68 hud-card" style="animation-delay: 2.3s;">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+<span class="font-code-md text-code-md text-tertiary-fixed-dim font-bold tracking-tight">CARDIAC MYOCARDIUM</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline">RHYTHM</span>
+</div>
+<div class="flex items-center justify-between font-code-md text-xs text-on-surface">
+<span class="text-on-surface-variant font-body-sm">SINUS RHYTHM</span>
+<span class="text-tertiary-fixed-dim font-bold">72 BPM</span>
+</div>
+<!-- Dynamic Mini ECG Wave Graphic -->
+<div class="flex items-center justify-between h-4 w-full px-1 bg-surface-container-low/60 rounded border border-outline-variant/20">
+<span class="text-[10px] font-code-md text-outline">P</span>
+<span class="text-[11px] font-code-md font-bold text-tertiary-fixed-dim">QRS</span>
+<span class="text-[10px] font-code-md text-outline">T</span>
+<span class="font-code-md text-[10px] text-tertiary-fixed-dim">QTc: 410ms</span>
+</div>
+</div>
+<!-- Lower Left Organ HUD: Enteric Tract / Metabolic Flux -->
+<div class="fixed bottom-12 left-6 z-20 pointer-events-none hidden 2xl:flex flex-col gap-1 p-space-xs rounded-xl bg-surface-container-lowest/80 border border-outline-variant/40 backdrop-blur-xl shadow-lg w-60 hud-card" style="animation-delay: 3.5s;">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-code-md text-[11px] text-primary font-semibold">ENTERIC TRACT</span>
+</div>
+<span class="font-label-caps text-[9px] text-outline">METABOLIC FLUX</span>
+</div>
+<div class="flex justify-between font-code-md text-[10px] text-on-surface-variant">
+<span>VISCERAL DYNAMICS</span>
+<span class="text-primary font-mono">NOMINAL (94%)</span>
+</div>
+</div>
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><img alt="VITALIS Precision Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY_iV4nQGbhuLwb0wYMLLKlYEudWtiChYc_HO52rmb7L2PS8ije0cLJOk_K1mv8QhsqlVDEK9gxv2KKofgldgLYfMb3lBwhh5QkI0oTeyXskUD8SbaLPNj8T-4sF7KaKnXv6T4bccVhuFZJcONmcNhoUMC1uS4Fpr3Y6BeVKphaaq1jeU3zOHymdD4B95plLOCkbuRjdOodqvwxP0lxSzbTyDCwBS10sfrhbFo8co9Q9AOPUa2NjYuP0Q"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">VITALIS</span><span class="font-label-caps text-label-caps text-outline tracking-wider">BIOMETRIC ML ANALYTICS</span></div></div><div class="hidden 2xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-code-md text-code-md text-primary tracking-wide">MODEL ACTIVE: VIT-ML-v4.2</span><span class="font-code-md text-code-md text-outline">(CONFIDENCE INTERVAL EVALUATOR)</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary border-b border-primary font-body-md text-body-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="overview-hero" href="#">Overview / Hero</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="symptom-analyzer" href="#">Symptom Analyzer</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="results-probabilities" href="#">Results &amp; Probabilities</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="health-journey-trends" href="#">Health Journey &amp; Trends</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="ml-architecture" href="#">ML Architecture</a></nav><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container border border-outline-variant/30 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">shield</span><span class="font-label-sm text-label-sm text-outline">Health Awareness Tool • Not an Emergency Service</span></div><div class="flex items-center p-space-2xs rounded bg-surface-container border border-outline-variant/40"><button aria-label="Theme Mode Toggle" class="p-space-2xs rounded text-primary hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><a class="relative inline-flex items-center justify-center px-space-md py-space-xs rounded bg-primary-container text-on-primary font-headline-md text-body-md font-semibold transition-all hover:bg-primary shadow-[0_0_20px_rgba(10,226,200,0.3)] hover:shadow-[0_0_28px_rgba(10,226,200,0.5)] active:scale-[0.98]" data-path="symptom-analyzer" href="#"><span class="relative z-10 flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">neurology</span>Start Analysis</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background/80 relative z-10"><div class="flex flex-col w-full relative z-10">
+<!-- Top Ambient Telemetry Grid & Hero Wrapper -->
+<section class="relative w-full overflow-hidden px-margin-mobile md:px-margin-tablet xl:px-margin-desktop py-space-xl xl:py-space-3xl">
+<!-- Atmospheric subtle background glow -->
+<div class="absolute top-12 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none"></div>
+<div class="absolute top-48 right-10 w-[500px] h-[500px] bg-secondary-container/15 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Hero Left: Typography & Clinical Actions -->
+<div class="xl:col-span-6 flex flex-col z-10">
+<!-- Eyebrow Telemetry Tag -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low border border-outline-variant/40 w-fit mb-space-lg shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">ML-POWERED HEALTH AWARENESS • CLINICAL FEATURE VECTOR ANALYSIS</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight mb-space-md max-w-2xl font-bold">
+          Understand what your symptoms could be telling you.
+        </h1>
+<!-- Editorial Subheading -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-xl leading-relaxed">
+          Explore possible conditions, understand symptom patterns, and know when it may be time to seek professional care. Built on explainable probabilistic models calibrated against empirical medical literature.
+        </p>
+<!-- CTA Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-md mb-space-2xl">
+<a class="relative inline-flex items-center gap-space-xs px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary font-headline-md text-headline-md font-semibold transition-all hover:bg-primary shadow-[0_0_24px_rgba(10,226,200,0.35)] hover:shadow-[0_0_36px_rgba(10,226,200,0.6)] active:scale-[0.98]" data-path="symptom-analyzer" href="#">
+<span>Start Symptom Analysis</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-low text-on-surface font-headline-md text-headline-md font-medium hover:bg-surface-container hover:text-primary transition-all border border-outline-variant/30" data-path="ml-architecture" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">schema</span>
+<span>Explore How It Works</span>
+</a>
+</div>
+<!-- Clinical Governance Strip -->
+<div class="flex flex-wrap items-center gap-space-lg pt-space-lg border-t border-outline-variant/20 max-w-xl">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dual-Layer Algorithmic Governance</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">privacy_tip</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero-Retention Local Vault</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">tune</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Empirical Weight Calibration</span>
+</div>
+</div>
+</div>
+<!-- Hero Right: 3D Anatomical Telemetry Simulation Container -->
+<div class="xl:col-span-6 relative mt-space-xl xl:mt-0">
+<div class="relative w-full rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-xl p-space-sm shadow-2xl overflow-hidden min-h-[580px] flex items-center justify-center">
+<!-- Background Coordinate Radar Pattern -->
+<div class="absolute inset-0 bg-[radial-gradient(rgba(76,255,228,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+<!-- Technical Corner Brackets -->
+<div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-primary/50 pointer-events-none"></div>
+<div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-primary/50 pointer-events-none"></div>
+<div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-primary/50 pointer-events-none"></div>
+<div class="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-primary/50 pointer-events-none"></div>
+<!-- Top Status Bar Inside Card -->
+<div class="absolute top-4 left-6 right-6 flex items-center justify-between z-20 pointer-events-none">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-md text-code-md text-primary font-semibold">ANATOMIC-3D // MODEL ENGINE</span>
+<span class="font-label-caps text-label-caps px-space-2xs py-0.5 bg-surface-container rounded text-outline">ROTATION: ACTIVE</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-outline">
+<span class="material-symbols-outlined text-primary text-[14px]">sensors</span>
+<span>SAMPLING 48 PARAMETERS</span>
+</div>
+</div>
+<!-- 3D Scene Custom Asset -->
+<div class="relative w-full h-[520px] flex items-center justify-center">
+
+<!-- Anatomical Hotspot Overlays (Interactive UI Tooltips) -->
+<!-- Cranial Hotspot -->
+<div class="absolute top-[18%] left-[51%] -translate-x-1/2 group cursor-pointer z-30">
+<span class="relative flex h-4 w-4 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-space-xs bg-surface-container-highest border border-outline-variant/60 rounded shadow-xl pointer-events-none">
+<div class="font-code-md text-code-md text-primary font-semibold">[Cranial / Head]</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Cephalgia, vestibular vertigo, sensory aura triggers.</div>
+</div>
+</div>
+<!-- Cardiopulmonary Hotspot -->
+<div class="absolute top-[32%] left-[48%] -translate-x-1/2 group cursor-pointer z-30">
+<span class="relative flex h-4 w-4 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary ring-2 ring-primary/40"></span>
+</span>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-space-xs bg-surface-container-highest border border-outline-variant/60 rounded shadow-xl pointer-events-none">
+<div class="font-code-md text-code-md text-primary font-semibold">[Cardiopulmonary / Chest]</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Dyspnea, orthopnea, thoracic constrictive indicators.</div>
+</div>
+</div>
+<!-- Enteric Hotspot -->
+<div class="absolute top-[46%] left-[52%] -translate-x-1/2 group cursor-pointer z-30">
+<span class="relative flex h-3.5 w-3.5 items-center justify-center">
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 p-space-xs bg-surface-container-highest border border-outline-variant/60 rounded shadow-xl pointer-events-none">
+<div class="font-code-md text-code-md text-secondary font-semibold">[Enteric / Abdominal]</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Epigastric distress, visceral spasm patterns.</div>
+</div>
+</div>
+<!-- Musculoskeletal Hotspot -->
+<div class="absolute top-[68%] left-[44%] -translate-x-1/2 group cursor-pointer z-30">
+<span class="relative flex h-3.5 w-3.5 items-center justify-center">
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span>
+</span>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 p-space-xs bg-surface-container-highest border border-outline-variant/60 rounded shadow-xl pointer-events-none">
+<div class="font-code-md text-code-md text-tertiary-fixed-dim font-semibold">[Musculoskeletal / Joints]</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Synovial stiffness, localized inflammatory drift.</div>
+</div>
+</div>
+</div>
+<!-- Floating Scientific Telemetry Badges -->
+<!-- Badge 1: Top Left -->
+<div class="absolute top-16 left-4 z-20 flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container/80 border border-outline-variant/40 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">hub</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">12 Symptoms Correlated</span>
+<span class="font-code-md text-code-md text-primary">In Active Pattern Matrix</span>
+</div>
+</div>
+<!-- Badge 2: Center Right -->
+<div class="absolute top-1/2 -translate-y-1/2 right-4 z-20 flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container/80 border border-outline-variant/40 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Respiratory System</span>
+<span class="font-code-md text-code-md text-on-surface-variant">Thoracic Node Active [98.2%]</span>
+</div>
+</div>
+<!-- Badge 3: Bottom Left -->
+<div class="absolute bottom-6 left-6 z-20 flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container/80 border border-outline-variant/40 backdrop-blur-md shadow-lg">
+<span class="material-symbols-outlined text-secondary text-[18px]">tune</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Bayesian Weights</span>
+<span class="font-code-md text-code-md text-secondary">Calibrated To Cohort v4</span>
+</div>
+</div>
+<!-- Real-Time Sparkline Gauge: Bottom Right -->
+<div class="absolute bottom-6 right-6 z-20 hidden sm:flex flex-col p-space-xs rounded-lg bg-surface-container-highest/80 border border-outline-variant/50 backdrop-blur-md w-44">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-caps text-label-caps text-outline">ENTROPY FILTER</span>
+<span class="font-code-md text-code-md text-primary">0.04 σ</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary w-[84%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Horizontal Marquee / Ribbon of Scientific Principles -->
+<section class="w-full bg-surface-container-low border-y border-outline-variant/30 py-space-sm overflow-hidden relative">
+<div class="flex items-center gap-space-2xl whitespace-nowrap animate-[marquee_28s_linear_infinite]" style="animation: marquee 30s linear infinite;">
+<div class="flex items-center gap-space-2xl font-code-md text-code-md text-on-surface-variant uppercase tracking-wider">
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-primary text-[16px]">all_inclusive</span> SYMPTOM PATTERNS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px]">grid_4x4</span> ML PROBABILITY MATRIX</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]">crisis_alert</span> RISK AWARENESS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">timeline</span> PREVENTATIVE TIMELINES</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-secondary text-[16px]">emergency</span> CLINICAL TRIAGE INDICATORS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">visibility</span> EXPLAINABLE FEATURE ATTRIBUTION</span>
+<span class="text-outline-variant">•</span>
+</div>
+<!-- Duplicate loop for smooth continuous marquee -->
+<div class="flex items-center gap-space-2xl font-code-md text-code-md text-on-surface-variant uppercase tracking-wider">
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-primary text-[16px]">all_inclusive</span> SYMPTOM PATTERNS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px]">grid_4x4</span> ML PROBABILITY MATRIX</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]">crisis_alert</span> RISK AWARENESS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">timeline</span> PREVENTATIVE TIMELINES</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-secondary text-[16px]">emergency</span> CLINICAL TRIAGE INDICATORS</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">visibility</span> EXPLAINABLE FEATURE ATTRIBUTION</span>
+<span class="text-outline-variant">•</span>
+</div>
+</div>
+</section>
+<!-- Three Distinct Value Propositions: Bento Architecture -->
+<section class="w-full px-margin-mobile md:px-margin-tablet xl:px-margin-desktop py-space-3xl max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+<div>
+<div class="font-code-md text-code-md text-primary font-semibold mb-space-xs">SYSTEM WORKFLOW ARCHITECTURE</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Structured Biometric Understanding</h2>
+</div>
+<p class="font-body-md text-body-md text-outline max-w-md">
+        From subjective sensations to mathematical probability fields. Clear diagnostic paths without algorithmic opacity.
+      </p>
+</div>
+<!-- 3 Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Pillar 01: UNDERSTAND -->
+<div class="group relative rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-xl flex flex-col justify-between hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-[0_8px_30px_rgba(10,226,200,0.1)]">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-code-lg text-code-lg text-primary font-bold">01 // UNDERSTAND</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary border border-outline-variant/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">transcribe</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">Subjective to Structured Vectors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-lg">
+            Translate complex, subjective bodily sensations into structured clinical feature vectors mapped against formal taxonomy.
+          </p>
+</div>
+<!-- Inline Data Sparkline Graphic -->
+<div class="pt-space-md border-t border-outline-variant/20 flex flex-col gap-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Natural Language Ingestion</span>
+<span class="text-primary font-code-md">NLP-ENC 99.1%</span>
+</div>
+<div class="flex gap-1 h-2 w-full">
+<div class="flex-1 bg-primary rounded-xs"></div>
+<div class="flex-1 bg-primary/80 rounded-xs"></div>
+<div class="flex-1 bg-primary/60 rounded-xs"></div>
+<div class="flex-1 bg-primary/40 rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+</div>
+</div>
+</div>
+<!-- Pillar 02: EXPLORE -->
+<div class="group relative rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-xl flex flex-col justify-between hover:border-secondary/60 transition-all duration-300 shadow-sm hover:shadow-[0_8px_30px_rgba(180,197,255,0.1)]">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-code-lg text-code-lg text-secondary font-bold">02 // EXPLORE</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">Probabilistic Differentials</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-lg">
+            Observe overlapping symptom clusters and condition differentials with full probabilistic transparency and attribution curves.
+          </p>
+</div>
+<!-- Inline Confidence Distribution Graphic -->
+<div class="pt-space-md border-t border-outline-variant/20 flex flex-col gap-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Variance Attribution Index</span>
+<span class="text-secondary font-code-md">p &lt; 0.001</span>
+</div>
+<div class="flex gap-1 h-2 w-full">
+<div class="flex-1 bg-secondary rounded-xs"></div>
+<div class="flex-1 bg-secondary rounded-xs"></div>
+<div class="flex-1 bg-secondary/70 rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+</div>
+</div>
+</div>
+<!-- Pillar 03: ACT -->
+<div class="group relative rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-xl flex flex-col justify-between hover:border-tertiary-fixed-dim/60 transition-all duration-300 shadow-sm hover:shadow-[0_8px_30px_rgba(255,185,95,0.1)]">
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-code-lg text-code-lg text-tertiary-fixed-dim font-bold">03 // ACT</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-fixed-dim border border-outline-variant/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">checklist_rtl</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-sm">Tiered Decision Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-lg">
+            Receive tiered next steps categorized by self-monitoring, non-urgent consultation, or immediate clinical triage alerts.
+          </p>
+</div>
+<!-- Inline Triage Priority Indicator -->
+<div class="pt-space-md border-t border-outline-variant/20 flex flex-col gap-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Triage Tier Allocation</span>
+<span class="text-tertiary-fixed-dim font-code-md">PRIORITY 2: EVAL</span>
+</div>
+<div class="flex gap-1 h-2 w-full">
+<div class="flex-1 bg-tertiary-fixed-dim rounded-xs"></div>
+<div class="flex-1 bg-tertiary-fixed-dim/70 rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+<div class="flex-1 bg-surface-container-highest rounded-xs"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quick Anatomical Preview Feature Section -->
+<section class="w-full px-margin-mobile md:px-margin-tablet xl:px-margin-desktop py-space-2xl max-w-[1440px] mx-auto">
+<div class="rounded-2xl bg-surface-container-low border border-outline-variant/30 p-space-lg md:p-space-2xl relative overflow-hidden">
+<!-- Background Ambient Grid -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Left Explainer & Quick Action -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container border border-outline-variant/40 w-fit mb-space-md">
+<span class="material-symbols-outlined text-primary text-[16px]">touch_app</span>
+<span class="font-label-caps text-label-caps text-primary">INTERACTIVE BODY MAP FEATURE</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl text-on-surface font-bold mb-space-sm">
+            Select a physiological region to isolate signals.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-xl leading-relaxed">
+            Preview typical symptom correlations and baseline severity parameters by selecting a target anatomical region before launching your comprehensive clinical assessment.
+          </p>
+<!-- Zone Selector Buttons -->
+<div class="flex flex-col gap-space-xs mb-space-xl" id="zone-selector-group">
+<button class="zone-btn active flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-primary text-on-surface transition-all text-left" data-zone="head" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<div>
+<div class="font-headline-md text-headline-md font-semibold text-primary">Cranial &amp; Neurological</div>
+<div class="font-body-sm text-body-sm text-outline">Cephalgia, migraine aura, cranial neuralgia</div>
+</div>
+</div>
+<span class="font-code-md text-code-md text-primary font-bold">14 MARKERS</span>
+</button>
+<button class="zone-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-outline transition-all text-left" data-zone="chest" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">cardiology</span>
+<div>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">Cardiopulmonary &amp; Thorax</div>
+<div class="font-body-sm text-body-sm text-outline">Angina discomfort, pleuritic friction, dyspnea</div>
+</div>
+</div>
+<span class="font-code-md text-code-md text-outline">22 MARKERS</span>
+</button>
+<button class="zone-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-outline transition-all text-left" data-zone="abdomen" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">save_as</span>
+<div>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">Gastrointestinal &amp; Enteric</div>
+<div class="font-body-sm text-body-sm text-outline">Visceral inflammation, colic, epigastric reflux</div>
+</div>
+</div>
+<span class="font-code-md text-code-md text-outline">18 MARKERS</span>
+</button>
+<button class="zone-btn flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/30 text-on-surface-variant hover:border-outline transition-all text-left" data-zone="extremities" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">accessibility_new</span>
+<div>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">Peripheral &amp; Joints</div>
+<div class="font-body-sm text-body-sm text-outline">Arthralgia, tendonitis, distal paresthesia</div>
+</div>
+</div>
+<span class="font-code-md text-code-md text-outline">16 MARKERS</span>
+</button>
+</div>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded bg-primary-container text-on-primary font-headline-md text-headline-md font-semibold hover:bg-primary transition-all shadow-[0_0_18px_rgba(10,226,200,0.25)]" data-path="symptom-analyzer" href="#">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+<span>Launch Analyzer With Selected Region</span>
+</a>
+</div>
+<!-- Right Dynamic Preview Display -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="rounded-xl bg-surface-container p-space-xl border border-outline-variant/40 shadow-inner flex flex-col min-h-[440px] justify-between">
+<!-- Technical Header of the Card -->
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-code-md text-code-md text-on-surface font-semibold uppercase" id="preview-zone-title">REGION // CRANIAL &amp; SENSORY AXIS</span>
+</div>
+<div class="font-code-md text-code-md text-outline">COHORT RISK: LOW-MODERATE</div>
+</div>
+<!-- Active Selected Telemetry Data Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md my-space-lg" id="preview-content-grid">
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col">
+<span class="font-label-caps text-label-caps text-outline mb-1">PREVALENT CLUSTERS</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold mb-2" id="preview-symptom-name">Migrainous / Tension Axis</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="preview-desc">
+                  Frequent presentation involves episodic unilateral throbbing, photosensitivity, or tight band constriction.
+                </p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-outline mb-1">PROBABILITY WEIGHT</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-primary" id="preview-stat">88.4%</span>
+<span class="font-body-sm text-body-sm text-outline">Vector Agreement</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-outline mb-1">
+<span>Model Confidence</span>
+<span class="font-code-md text-primary">High (σ=0.03)</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+</div>
+</div>
+<!-- High Value Clinical Signal Chips -->
+<div class="md:col-span-2 p-space-md rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="font-label-caps text-label-caps text-outline block mb-space-xs">ATTRIBUTED CLINICAL MARKERS</span>
+<div class="flex flex-wrap gap-space-xs" id="preview-tags">
+<span class="px-space-xs py-1 rounded bg-surface-container text-primary font-code-md text-code-md border border-primary/20">Ocular Photophobia</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-code-md text-code-md border border-outline-variant/30">Nausea Correlation</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-on-surface font-code-md text-code-md border border-outline-variant/30">Cervical Rigidity (Ruled Out)</span>
+<span class="px-space-xs py-1 rounded bg-surface-container text-tertiary-fixed-dim font-code-md text-code-md border border-tertiary-fixed-dim/20">Aura Prodrome</span>
+</div>
+</div>
+</div>
+<!-- Bottom Disclaimer Footnote -->
+<div class="flex items-center justify-between pt-space-md border-t border-outline-variant/20 text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-primary">analytics</span>
+                Bayesian Prior: General Adult Population Distribution
+              </span>
+<span>Updated: Real-Time Stream</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- High-Trust Scientific Rigor & Medical Safety Strip -->
+<section class="w-full px-margin-mobile md:px-margin-tablet xl:px-margin-desktop py-space-2xl max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[28px] mb-space-sm">lock</span>
+<h4 class="font-headline-md text-headline-md font-semibold text-on-surface mb-space-2xs">Client-Side Enclave</h4>
+<p class="font-body-sm text-body-sm text-outline">
+          Your physiological queries remain strictly ephemeral in local browser memory without persistent logging.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col">
+<span class="material-symbols-outlined text-secondary text-[28px] mb-space-sm">device_thermostat</span>
+<h4 class="font-headline-md text-headline-md font-semibold text-on-surface mb-space-2xs">Clinical Sensitivity</h4>
+<p class="font-body-sm text-body-sm text-outline">
+          Calibrated using validated clinical datasets to balance true positive identification against hypochondria bias.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[28px] mb-space-sm">psychology_alt</span>
+<h4 class="font-headline-md text-headline-md font-semibold text-on-surface mb-space-2xs">Explainable AI (XAI)</h4>
+<p class="font-body-sm text-body-sm text-outline">
+          Every probability output details exact feature weight attributions so you see why a suggestion is generated.
+        </p>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col">
+<span class="material-symbols-outlined text-error text-[28px] mb-space-sm">medical_services</span>
+<h4 class="font-headline-md text-headline-md font-semibold text-on-surface mb-space-2xs">Emergency Escalation</h4>
+<p class="font-body-sm text-body-sm text-outline">
+          Automated red-flag filters instantly flag urgent cardiac, neurological, or trauma cues for immediate 911/ER guidance.
+        </p>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript for Quick Anatomical Body Zone Preview -->
+<script>
+    (function() {
+      const zoneData = {
+        head: {
+          title: "REGION // CRANIAL & SENSORY AXIS",
+          name: "Migrainous / Tension Axis",
+          desc: "Frequent presentation involves episodic unilateral throbbing, photosensitivity, or tight band constriction.",
+          stat: "88.4%",
+          tags: ["Ocular Photophobia", "Nausea Correlation", "Cervical Rigidity (Ruled Out)", "Aura Prodrome"]
+        },
+        chest: {
+          title: "REGION // CARDIOPULMONARY & THORACIC",
+          name: "Ventilatory / Costochondral Axis",
+          desc: "Signals include exertional dyspnea, positional chest tightness, or respiratory muscle fatigue patterns.",
+          stat: "91.2%",
+          tags: ["Inspiratory Limitation", "Orthopnea Negative", "Resting Tachycardia Check", "Pleuritic Differential"]
+        },
+        abdomen: {
+          title: "REGION // GASTROINTESTINAL & ENTERIC",
+          name: "Functional Visceral / Dyspeptic",
+          desc: "Typical presentations involve post-prandial fullness, cramping motility shifts, or localized right lower quadrant observation.",
+          stat: "79.6%",
+          tags: ["Epigastric Sensitization", "Bowel Frequency Shift", "Febrile Markers Absent", "Hydration Drift"]
+        },
+        extremities: {
+          title: "REGION // MUSCULOSKELETAL & PERIPHERAL",
+          name: "Inflammatory / Synovial Strain",
+          desc: "Correlated findings show localized load-bearing joint stiffness, periarticular warmth, or peripheral nerve compression.",
+          stat: "84.1%",
+          tags: ["Morning Stiffness > 30m", "Bilateral Symmetry", "Neuropathic Tingling", "Motion Arc Limitation"]
+        }
+      };
+
+      const buttons = document.querySelectorAll('#zone-selector-group .zone-btn');
+      const titleEl = document.getElementById('preview-zone-title');
+      const nameEl = document.getElementById('preview-symptom-name');
+      const descEl = document.getElementById('preview-desc');
+      const statEl = document.getElementById('preview-stat');
+      const tagsEl = document.getElementById('preview-tags');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const zoneKey = this.getAttribute('data-zone');
+          const data = zoneData[zoneKey];
+          if (!data) return;
+
+          // Reset styles
+          buttons.forEach(b => {
+            b.classList.remove('border-primary', 'active');
+            b.classList.add('border-outline-variant/30', 'text-on-surface-variant');
+            const icon = b.querySelector('.material-symbols-outlined');
+            if (icon) icon.className = "material-symbols-outlined text-outline text-[20px]";
+            const title = b.querySelector('.font-headline-md');
+            if (title) title.className = "font-headline-md text-headline-md font-semibold text-on-surface";
+          });
+
+          // Set active button style
+          this.classList.remove('border-outline-variant/30', 'text-on-surface-variant');
+          this.classList.add('border-primary', 'active');
+          const activeIcon = this.querySelector('.material-symbols-outlined');
+          if (activeIcon) activeIcon.className = "material-symbols-outlined text-primary text-[20px]";
+          const activeTitle = this.querySelector('.font-headline-md');
+          if (activeTitle) activeTitle.className = "font-headline-md text-headline-md font-semibold text-primary";
+
+          // Update card content with subtle fade
+          titleEl.textContent = data.title;
+          nameEl.textContent = data.name;
+          descEl.textContent = data.desc;
+          statEl.textContent = data.stat;
+
+          // Repopulate tags
+          tagsEl.innerHTML = '';
+          data.tags.forEach((tag, idx) => {
+            const span = document.createElement('span');
+            span.className = idx === 0 
+              ? "px-space-xs py-1 rounded bg-surface-container text-primary font-code-md text-code-md border border-primary/20" 
+              : "px-space-xs py-1 rounded bg-surface-container text-on-surface font-code-md text-code-md border border-outline-variant/30";
+            span.textContent = tag;
+            tagsEl.appendChild(span);
+          });
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-space-2xl mt-space-3xl relative z-10"><div class="w-full px-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg border-b border-outline-variant/10"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-bold">VITALIS</span><span class="font-code-md text-code-md text-outline">| CLINICAL PREDICTION SUITE</span></div><div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="ml-architecture" href="#">Precision Calibration</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Algorithmic Governance</a><span class="text-outline-variant">•</span><a class="hover:text-primary transition-colors" href="#">Privacy &amp; HIPAA Enclave</a></div></div><div class="pt-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">VITALIS is an educational and analytical health awareness platform powered by probabilistic machine learning models. It does not provide medical diagnoses or replace licensed clinical judgment. In case of acute symptoms, contact emergency medical care immediately.</p><div class="font-code-md text-code-md text-outline-variant flex-shrink-0">© 2024 VITALIS LABS INC. TELEMETRY ACTIVE.</div></div></div></footer></body></html>
